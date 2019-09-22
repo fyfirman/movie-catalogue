@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent showDetailMovie = new Intent(MainActivity.this, DetailMovie.class);
                 showDetailMovie.putExtra(DetailMovie.EXTRA_MOVIE, movies.get(i));
                 startActivity(showDetailMovie);
-//                Toast.makeText(MainActivity.this, movies.get(i).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }
