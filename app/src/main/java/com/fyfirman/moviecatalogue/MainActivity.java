@@ -1,5 +1,6 @@
 package com.fyfirman.moviecatalogue;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, movies.get(i).getTitle(), Toast.LENGTH_SHORT).show();
+                Intent showDetailMovie = new Intent(MainActivity.this, DetailMovie.class);
+                showDetailMovie.putExtra(DetailMovie.EXTRA_MOVIE, movies.get(i));
+                startActivity(showDetailMovie);
+//                Toast.makeText(MainActivity.this, movies.get(i).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }
