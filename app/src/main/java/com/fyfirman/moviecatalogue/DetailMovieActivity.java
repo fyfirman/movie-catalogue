@@ -5,18 +5,16 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailMovie extends AppCompatActivity {
+public class DetailMovieActivity extends AppCompatActivity {
   public static final String EXTRA_MOVIE = "default_extra";
-  ImageView imgPhoto;
-  TextView txtTitle;
-  TextView txtSynopsis;
-
+  private ImageView imgPhoto;
+  private TextView txtTitle;
+  private TextView txtSynopsis;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_detail_movie);
-
 
     Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
     bindView(movie);
@@ -30,7 +28,5 @@ public class DetailMovie extends AppCompatActivity {
     imgPhoto.setImageResource(movie.getPhoto());
     txtTitle.setText(movie.getTitle());
     txtSynopsis.setText(movie.getSynopsis());
-
   }
-
 }

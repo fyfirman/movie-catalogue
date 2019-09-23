@@ -6,7 +6,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:orientation="vertical"
-  tools:context=".DetailMovie">
+  tools:context=".DetailMovieActivity">
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -26,7 +26,7 @@
       android:text="Dragon Ball Super: Broly "
       android:layout_marginStart="16dp"
       android:layout_marginLeft="16dp"
-      android:textSize="24dp"
+      android:textSize="24sp"
       android:textStyle="bold"
       android:maxLines="2"/>
   </LinearLayout>
@@ -41,14 +41,14 @@
       android:layout_height="wrap_content"
       android:textStyle="bold"
       android:text="Overview"
-      android:textSize="14dp"
+      android:textSize="14sp"
       android:layout_marginTop="16dp"
       android:layout_marginBottom="16dp"/>
     <TextView
       android:id="@+id/movie_synopsis"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:textSize="12dp"
+      android:textSize="12sp"
       android:text="Earth is peaceful following the Tournament of Power. Realizing that the universes still hold many more strong people yet to see, Goku spends all his days training to reach even greater heights. Then one day, Goku and Vegeta are faced by a Saiyan called 'Broly' who they've never seen before. The Saiyans were supposed to have been almost completely wiped out in the destruction of Planet Vegeta, so what's this one doing on Earth? This encounter between the three Saiyans who have followed completely different destinies turns into a stupendous battle, with even Frieza (back from Hell) getting caught up in the mix."
       />
   </LinearLayout>
