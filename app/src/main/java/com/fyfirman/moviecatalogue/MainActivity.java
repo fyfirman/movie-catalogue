@@ -6,10 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextClock;
-import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent showDetailMovie = new Intent(MainActivity.this, DetailMovie.class);
-                showDetailMovie.putExtra(DetailMovie.EXTRA_MOVIE, movies.get(i));
+                Intent showDetailMovie = new Intent(MainActivity.this, DetailMovieActivity.class);
+                showDetailMovie.putExtra(DetailMovieActivity.EXTRA_MOVIE, movies.get(i));
                 startActivity(showDetailMovie);
             }
         });
