@@ -1,8 +1,7 @@
-package com.fyfirman.moviecatalogue;
+package com.fyfirman.moviecatalogue.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
 
 public class Movie implements android.os.Parcelable {
 

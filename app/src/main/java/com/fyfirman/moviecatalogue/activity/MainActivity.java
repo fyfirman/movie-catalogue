@@ -1,16 +1,14 @@
-package com.fyfirman.moviecatalogue;
+package com.fyfirman.moviecatalogue.activity;
 
-import android.content.Intent;
-import android.content.res.TypedArray;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import java.util.ArrayList;
+import com.fyfirman.moviecatalogue.adapter.MainFragmentPagerAdapter;
+import com.fyfirman.moviecatalogue.fragment.MoviesFragment;
+import com.fyfirman.moviecatalogue.R;
+import com.fyfirman.moviecatalogue.fragment.TvShowFragment;
 
 public class MainActivity extends AppCompatActivity {
     @Override

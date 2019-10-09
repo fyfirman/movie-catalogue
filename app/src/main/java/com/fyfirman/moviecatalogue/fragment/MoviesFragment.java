@@ -1,4 +1,4 @@
-package com.fyfirman.moviecatalogue;
+package com.fyfirman.moviecatalogue.fragment;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -10,7 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+import com.fyfirman.moviecatalogue.data.Movie;
+import com.fyfirman.moviecatalogue.R;
+import com.fyfirman.moviecatalogue.activity.DetailMovieActivity;
+import com.fyfirman.moviecatalogue.adapter.MovieAdapter;
 import java.util.ArrayList;
 
 public class MoviesFragment extends Fragment {

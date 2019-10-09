@@ -1,4 +1,4 @@
-package com.fyfirman.moviecatalogue;
+package com.fyfirman.moviecatalogue.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

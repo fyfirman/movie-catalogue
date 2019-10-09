@@ -1,13 +1,14 @@
-package com.fyfirman.moviecatalogue;
+package com.fyfirman.moviecatalogue.adapter;
 
 import android.content.Context;
-import android.media.midi.MidiOutputPort;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.fyfirman.moviecatalogue.data.Movie;
+import com.fyfirman.moviecatalogue.R;
 import java.util.ArrayList;
 
 public class MovieAdapter extends BaseAdapter {

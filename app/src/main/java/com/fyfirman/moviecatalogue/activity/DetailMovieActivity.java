@@ -1,9 +1,11 @@
-package com.fyfirman.moviecatalogue;
+package com.fyfirman.moviecatalogue.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.fyfirman.moviecatalogue.data.Movie;
+import com.fyfirman.moviecatalogue.R;
 
 public class DetailMovieActivity extends AppCompatActivity {
   public static final String EXTRA_MOVIE = "default_extra";
