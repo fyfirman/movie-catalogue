@@ -40,8 +40,5 @@
     <item>@drawable/poster_deadpool</item>
     <item>@drawable/poster_dragonball</item>
     <item>@drawable/poster_dragon</item>
-  </array>
-
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
+  </array>x
 </resources>
