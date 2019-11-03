@@ -24,8 +24,8 @@ public class DetailTvShowActivity extends AppCompatActivity {
 
   private void bindView(Tv_Show tv_show){
     imgPhoto = findViewById(R.id.img_photo);
-    txtTitle = findViewById(R.id.movie_title);
-    txtSynopsis = findViewById(R.id.movie_synopsis);
+    txtTitle = findViewById(R.id.tv_show_title);
+    txtSynopsis = findViewById(R.id.tv_show_synopsis);
 
     imgPhoto.setImageResource(tv_show.getPhoto());
     txtTitle.setText(tv_show.getTitle());
