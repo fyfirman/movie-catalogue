@@ -6,15 +6,15 @@
   tools:context=".fragment.TvShowFragment">
 
   <!-- TODO: Update blank fragment layout -->
-  <TextView
+  <LinearLayout
+    android:layout_marginTop="?attr/actionBarSize"
+    android:paddingTop="?attr/actionBarSize"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="TV show"/>
-
-  <android.support.v7.widget.RecyclerView
-    android:id="@+id/rv_tv_show"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:listitem="@layout/item_row_tv_show" />
-
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/rv_tv_show"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:listitem="@layout/item_row_tv_show" />
+  </LinearLayout>
 </FrameLayout>
