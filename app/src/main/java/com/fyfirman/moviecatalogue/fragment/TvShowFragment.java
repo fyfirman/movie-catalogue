@@ -1,5 +1,6 @@
 package com.fyfirman.moviecatalogue.fragment;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.fyfirman.moviecatalogue.R;
+import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
 import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
 import java.util.ArrayList;
@@ -28,13 +30,13 @@ public class TvShowFragment extends Fragment {
   }
 
   private void initTvShow(){
-
   }
 
+
   public ArrayList<Tv_Show> getListTvShow(){
-    String[] dataTitle = getResources().getStringArray(R.array.data_title);
-    String[] dataSynopsis = getResources().getStringArray(R.array.data_synopsis);
-    TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+    String[] dataTitle = getResources().getStringArray(R.array.tv_show_title);
+    String[] dataSynopsis = getResources().getStringArray(R.array.tv_show_synopsis);
+    TypedArray dataPhoto = getResources().obtainTypedArray(R.array.tv_show_photo);
 
     ArrayList<Tv_Show> listTvShow = new ArrayList<>();
     for (int i = 0; i < dataTitle.length; i++) {
@@ -61,5 +63,23 @@ public class TvShowFragment extends Fragment {
     //set adapter
     ListTvShowAdapter listTvShowAdapter = new ListTvShowAdapter(listTvShow);
     rvTvShow.setAdapter(listTvShowAdapter);
+
+    //buat onclick callback function
+    listTvShowAdapter.setOnItemClickCallback(new ListTvShowAdapter.OnItemClickCallback() {
+      @Override
+      public void onItemClicked(Tv_Show data) {
+        showSelectedTvShow(data);
+      }
+    });
+  }
+
+  private void showSelectedTvShow(Tv_Show data){
+//    Toast toast = Toast.makeText(getActivity(),"Hello TV Show!",Toast.LENGTH_SHORT);
+//    toast.show();
+
+    Intent showDetailMovie = new Intent(getActivity(), DetailTvShowActivity.class);
+
+    showDetailMovie.putExtra(DetailTvShowActivity.EXTRA_MOVIE, data);
+    startActivity(showDetailMovie);
   }
 }

@@ -19,7 +19,6 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
     this.listTvShow = list;
   }
 
-
   public class ListViewHolder extends ViewHolder {
     ImageView imgPhoto;
     TextView tvTitle, tvSynopsis;
@@ -41,16 +40,33 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
   }
 
   @Override
-  public void onBindViewHolder(@NonNull ListViewHolder listViewHolder, int i) {
+  public void onBindViewHolder(@NonNull final ListViewHolder listViewHolder, int i) {
     Tv_Show tv_show = listTvShow.get(i);
 
     listViewHolder.imgPhoto.setImageResource(tv_show.getPhoto());
     listViewHolder.tvTitle.setText(tv_show.getTitle());
     listViewHolder.tvSynopsis.setText(tv_show.getSynopsis());
+
+    listViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        onItemClickCallback.onItemClicked(listTvShow.get(listViewHolder.getAdapterPosition()));
+      }
+    });
   }
 
   @Override
   public int getItemCount() {
     return listTvShow.size();
+  }
+
+  private OnItemClickCallback onItemClickCallback;
+
+  public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+    this.onItemClickCallback = onItemClickCallback;
+  }
+
+  public interface OnItemClickCallback {
+    void onItemClicked(Tv_Show data);
   }
 }

@@ -5,7 +5,6 @@
   android:layout_height="match_parent"
   tools:context=".fragment.TvShowFragment">
 
-  <!-- TODO: Update blank fragment layout -->
   <LinearLayout
     android:layout_marginTop="?attr/actionBarSize"
     android:paddingTop="?attr/actionBarSize"
