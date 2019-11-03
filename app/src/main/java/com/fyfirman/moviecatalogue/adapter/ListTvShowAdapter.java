@@ -51,6 +51,6 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
 
   @Override
   public int getItemCount() {
-    return 0;
+    return listTvShow.size();
   }
 }

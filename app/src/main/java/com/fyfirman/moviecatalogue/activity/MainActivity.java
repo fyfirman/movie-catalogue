@@ -4,11 +4,16 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
 import com.fyfirman.moviecatalogue.adapter.MainFragmentPagerAdapter;
+import com.fyfirman.moviecatalogue.data.Tv_Show;
 import com.fyfirman.moviecatalogue.fragment.MoviesFragment;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.fragment.TvShowFragment;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -17,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initTabLayout();
-
-
     }
 
     private void initTabLayout(){
