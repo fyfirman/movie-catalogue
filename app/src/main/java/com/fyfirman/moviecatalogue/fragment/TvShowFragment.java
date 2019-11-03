@@ -1,5 +1,6 @@
 package com.fyfirman.moviecatalogue.fragment;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -33,14 +34,14 @@ public class TvShowFragment extends Fragment {
   public ArrayList<Tv_Show> getListTvShow(){
     String[] dataTitle = getResources().getStringArray(R.array.data_title);
     String[] dataSynopsis = getResources().getStringArray(R.array.data_synopsis);
-    int[] dataPhoto = getResources().getIntArray(R.array.data_photo);
+    TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
 
     ArrayList<Tv_Show> listTvShow = new ArrayList<>();
     for (int i = 0; i < dataTitle.length; i++) {
       Tv_Show tv_show = new Tv_Show();
       tv_show.setTitle(dataTitle[i]);
       tv_show.setSynopsis(dataSynopsis[i]);
-      tv_show.setPhoto(dataPhoto[i]);
+      tv_show.setPhoto(dataPhoto.getResourceId(i,1));
       listTvShow.add(tv_show);
     }
     return listTvShow;

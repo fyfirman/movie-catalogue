@@ -26,7 +26,7 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
 
     ListViewHolder(View itemView) {
       super(itemView);
-      imgPhoto = itemView.findViewById(R.id.img_photo);
+      imgPhoto = itemView.findViewById(R.id.tv_img_photo);
       tvTitle = itemView.findViewById(R.id.tv_show_title);
       tvSynopsis = itemView.findViewById(R.id.tv_show_synopsis);
     }

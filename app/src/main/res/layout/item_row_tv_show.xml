@@ -6,7 +6,7 @@
   android:padding="16dp">
 
   <ImageView
-    android:id="@+id/img_photo"
+    android:id="@+id/tv_img_photo"
     android:layout_width="100dp"
     android:layout_height="150dp"
     android:scaleType="fitXY"/>
@@ -18,8 +18,8 @@
     android:text="Movie title"
     android:textSize="18sp"
     android:textStyle="bold"
-    android:layout_toEndOf="@id/img_photo"
-    android:layout_toRightOf="@id/img_photo"
+    android:layout_toEndOf="@id/tv_img_photo"
+    android:layout_toRightOf="@id/tv_img_photo"
     android:layout_marginStart="26dp"
     android:layout_marginLeft="26dp"/>
 
@@ -30,7 +30,7 @@
     android:layout_height="wrap_content"
     android:text="dsaubdbsaubsadudbsaubdsaudbasudbsaudbsaubdasubusa"
     android:layout_below="@id/tv_show_title"
-    android:layout_toRightOf="@id/img_photo"
+    android:layout_toRightOf="@id/tv_img_photo"
     android:layout_marginStart="26dp"
     android:layout_marginLeft="26dp"
     android:ellipsize="end"
