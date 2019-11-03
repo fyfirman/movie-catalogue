@@ -30,9 +30,9 @@ public class MoviesFragment extends Fragment {
   }
 
   public ArrayList<Movie> getListMovie(){
-    String[] dataTitle = getResources().getStringArray(R.array.tv_show_title);
-    String[] dataSynopsis = getResources().getStringArray(R.array.tv_show_synopsis);
-    TypedArray dataPhoto = getResources().obtainTypedArray(R.array.tv_show_photo);
+    String[] dataTitle = getResources().getStringArray(R.array.data_title);
+    String[] dataSynopsis = getResources().getStringArray(R.array.data_synopsis);
+    TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
 
     ArrayList<Movie> listMovie = new ArrayList<>();
     for (int i = 0; i < dataTitle.length; i++) {
