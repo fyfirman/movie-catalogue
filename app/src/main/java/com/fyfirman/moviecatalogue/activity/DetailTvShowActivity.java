@@ -8,7 +8,7 @@ import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
 
 public class DetailTvShowActivity extends AppCompatActivity {
-  public static final String EXTRA_MOVIE = "default_extra";
+  public static final String EXTRA_TV_SHOW = "default_extra";
   private ImageView imgPhoto;
   private TextView txtTitle;
   private TextView txtSynopsis;
@@ -18,17 +18,17 @@ public class DetailTvShowActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_detail_tv_show);
 
-    Tv_Show movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-    bindView(movie);
+    Tv_Show tv_show = getIntent().getParcelableExtra(EXTRA_TV_SHOW);
+    bindView(tv_show);
   }
 
-  private void bindView(Tv_Show movie){
+  private void bindView(Tv_Show tv_show){
     imgPhoto = findViewById(R.id.img_photo);
     txtTitle = findViewById(R.id.movie_title);
     txtSynopsis = findViewById(R.id.movie_synopsis);
 
-    imgPhoto.setImageResource(movie.getPhoto());
-    txtTitle.setText(movie.getTitle());
-    txtSynopsis.setText(movie.getSynopsis());
+    imgPhoto.setImageResource(tv_show.getPhoto());
+    txtTitle.setText(tv_show.getTitle());
+    txtSynopsis.setText(tv_show.getSynopsis());
   }
 }

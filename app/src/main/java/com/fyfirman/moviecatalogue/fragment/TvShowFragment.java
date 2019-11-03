@@ -14,6 +14,7 @@ import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
 import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
+import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
 import java.util.ArrayList;
 
 public class TvShowFragment extends Fragment {
@@ -79,7 +80,7 @@ public class TvShowFragment extends Fragment {
 
     Intent showDetailMovie = new Intent(getActivity(), DetailTvShowActivity.class);
 
-    showDetailMovie.putExtra(DetailTvShowActivity.EXTRA_MOVIE, data);
+    showDetailMovie.putExtra(DetailTvShowActivity.EXTRA_TV_SHOW, data);
     startActivity(showDetailMovie);
   }
 }
