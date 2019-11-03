@@ -11,4 +11,10 @@
     android:layout_height="match_parent"
     android:text="TV show"/>
 
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_tv_show"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:listitem="@layout/item_row_tv_show" />
+
 </FrameLayout>
