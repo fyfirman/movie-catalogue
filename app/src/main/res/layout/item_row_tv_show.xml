@@ -12,7 +12,7 @@
     android:scaleType="fitXY"/>
 
   <TextView
-    android:id="@+id/movie_title"
+    android:id="@+id/tv_show_title"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Movie title"
@@ -24,12 +24,12 @@
     android:layout_marginLeft="26dp"/>
 
   <TextView
-    android:id="@+id/movie_synopsis"
+    android:id="@+id/tv_show_synopsis"
     android:textSize="14sp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="dsaubdbsaubsadudbsaubdsaudbasudbsaudbsaubdasubusa"
-    android:layout_below="@id/movie_title"
+    android:layout_below="@id/tv_show_title"
     android:layout_toRightOf="@id/img_photo"
     android:layout_marginStart="26dp"
     android:layout_marginLeft="26dp"
