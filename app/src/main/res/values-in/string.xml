@@ -1,9 +1,9 @@
 <resources>
-  <string name="app_name">Movie Catalogue</string>
+  <string name="app_name">Katalog Film</string>
   <string name="name_heroes">Nama Film</string>
   <string name="lorem">lorem ipsum dolor sit amet</string>
-  <string name="movies">Movies</string>
-  <string name="tv_show">TV Show</string>
+  <string name="movies">Film</string>
+  <string name="tv_show">Siaran TV</string>
 
   <string-array name="data_title">
     <item>A Star Is Born</item>
@@ -17,6 +17,7 @@
     <item>Dragon Ball Super: Broly</item>
     <item>How to Train Your Dragon: The Hidden World</item>
   </string-array>
+
   <string-array name="data_synopsis">
     <item>Seasoned musician Jackson Maine discovers - and falls in love with - struggling artist Ally. She has just about given up on her dream to make it big as a singer - until Jack coaxes her into the spotlight. But even as Ally\'s career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</item>
     <item>Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm\'s half-human, half-Atlantean brother and true heir to the throne.</item>
@@ -41,7 +42,6 @@
     <item>@drawable/poster_dragonball</item>
     <item>@drawable/poster_dragon</item>
   </array>
-
   <string-array name="tv_show_title">
     <item>All I Want for Love is You</item>
     <item>Captain Tsubasa</item>
@@ -55,17 +55,17 @@
     <item>Val x Love</item>
   </string-array>
   <string-array name="tv_show_synopsis">
-    <item>A story full of laughs follows sanda fighter Gu Xiao Man and school genius Zuo An as they chase after love.</item>
-    <item>The passionate story of an elementary school student whose thoughts and dreams revolve almost entirely around the love of soccer. 11-year-old Tsubasa Oozora started playing football at a very young age, and while it was mostly just a recreational sport for his friends, for him, it developed into something of an obsession.</item>
-    <item>A bullied teenager turns to beauty pageants as a way to exact her revenge, with the help of a disgraced coach who soon realizes he\'s in over his head.</item>
-    <item>Set two generations before the destruction of the legendary Man of Steels home planet, Krypton follows Supermans grandfather — whose House of El was ostracized and shamed - as he fights to redeem his familys honor and save his beloved world from chaos.</item>
-    <item>In a place where young witches, vampires, and werewolves are nurtured to be their best selves in spite of their worst impulses, Klaus Mikaelsons daughter, 17-year-old Hope Mikaelson, Alaric Saltzmans twins, Lizzie and Josie Saltzman, among others, come of age into heroes and villains at The Salvatore School for the Young and Gifted.</item>
-    <item>Seth is a boy who seeks to become a great magician, and a group of witches who seek to travel to the Radiant. Radiant is a mythical land that spawns monsters called Néméses which fall to the world from the sky. While traveling, they are also hunted by The Inquisition.</item>
-    <item>Puberty Syndrome—a rumored, mysterious syndrome that only affects those in their puberty. For example, a bunny girl suddenly appeared in front of Sakuta Azusagawa. The bunny girls real identity is Mai Sakurajima, a teenage celebrity who is currently an inactive high school senior. For some reason, her charming figure does not reflect in the eyes of others. In the course of revealing the mystery behind this phenomenon, Sakuta begins to explore his feelings towards Mai. Set in a city where the skies and seas shine, Sakuta unfolds the meaning behind his bizarre encounters on women with the said syndrome.</item>
-    <item>When CIA analyst Jack Ryan stumbles upon a suspicious series of bank transfers his search for answers pulls him from the safety of his desk job and catapults him into a deadly game of cat and mouse throughout Europe and the Middle East, with a rising terrorist figurehead preparing for a massive attack against the US and her allies.</item>
-    <item>A team of young superheroes led by Nightwing (formerly Batman\'s first Robin) form to combat evil and other perils.</item>
-    <item>High schooler Akutsu Takuma has learned to accept his lonely lot in life and is content surrounded by his studies, but when the god Odin taps him to save the world alongside nine Valkyries fueled by intimacy, Takuma can say good-bye to his solitary existence.</item>
-  </string-array>
+    <item> Sebuah kisah penuh tawa mengikuti pejuang sanda Gu Xiao Man dan jenius sekolah Zuo An saat mereka mengejar cinta. </item>
+    <item> Kisah penuh gairah dari seorang siswa sekolah dasar yang pikiran dan mimpinya berputar hampir seluruhnya di sekitar cinta sepak bola. Tsubasa Oozora yang berusia 11 tahun mulai bermain sepak bola pada usia yang sangat muda, dan sementara itu kebanyakan hanya olahraga rekreasi untuk teman-temannya, baginya, itu berkembang menjadi sesuatu yang obsesi. </item>
+    <item> Seorang remaja yang diintimidasi beralih ke kontes kecantikan sebagai cara untuk membalas dendamnya, dengan bantuan pelatih yang dipermalukan yang segera menyadari bahwa ia berada di atas kepalanya. </item>
+    <item> Mengatur dua generasi sebelum penghancuran planet rumah Manusia Baja yang legendaris, Krypton mengikuti kakek Superman - yang House Elnya dikucilkan dan dipermalukan - saat ia berjuang untuk menebus kehormatan keluarganya dan menyelamatkan dunianya yang tercinta dari kekacauan. </item>
+    <item> Di tempat penyihir muda, vampir, dan manusia serigala diasuh untuk menjadi diri terbaik mereka terlepas dari impuls terburuk mereka, putri Klaus Mikaelsons, 17 tahun Hope Mikaelson, kembar Alaric Saltzmans, Lizzie dan Josie Saltzman, di antaranya yang lain, tumbuh menjadi pahlawan dan penjahat di The Salvatore School for the Young and Gifted. </item>
+    <item> Seth adalah anak laki-laki yang berusaha menjadi pesulap hebat, dan sekelompok penyihir yang berusaha melakukan perjalanan ke Radiant. Radiant adalah tanah mistis yang memunculkan monster yang disebut Néméses yang jatuh ke dunia dari langit. Saat bepergian, mereka juga diburu oleh Inkuisisi. </item>
+    <item> Sindrom Pubertas — sindrom yang dikabarkan dan misterius yang hanya memengaruhi mereka yang sedang pubertas. Misalnya, seorang gadis kelinci tiba-tiba muncul di depan Sakuta Azusagawa. Identitas kelinci sebenarnya adalah Mai Sakurajima, seorang selebriti remaja yang saat ini adalah seorang siswa SMA yang tidak aktif. Untuk beberapa alasan, sosoknya yang menawan tidak tercermin di mata orang lain. Dalam rangka mengungkapkan misteri di balik fenomena ini, Sakuta mulai mengeksplorasi perasaannya terhadap Mai. Berada di kota tempat langit dan laut bersinar, Sakuta mengungkap makna di balik pertemuannya yang aneh pada wanita dengan sindrom tersebut. </item>
+    <item> Ketika analis CIA Jack Ryan menemukan serangkaian transfer bank yang mencurigakan, pencariannya atas jawaban menariknya dari keselamatan pekerjaan mejanya dan melontarkannya ke dalam permainan kucing dan tikus yang mematikan di seluruh Eropa dan Timur Tengah, dengan peningkatan tokoh teroris mempersiapkan serangan besar-besaran terhadap AS dan sekutunya. </item>
+    <item> Tim pahlawan super muda yang dipimpin oleh Nightwing (sebelumnya Robin pertama Batman) terbentuk untuk memerangi kejahatan dan bahaya lainnya. </item>
+    <item> Siswa sekolah menengah Akutsu Takuma telah belajar untuk menerima banyak hal kesepian dalam hidupnya dan puas dikelilingi oleh studinya, tetapi ketika dewa Odin mengetuk dia untuk menyelamatkan dunia bersama sembilan Valkyrie yang didorong oleh keintiman, Takuma dapat mengucapkan selamat tinggal padanya keberadaan soliter. </item>
+  </string-array>
   <array name="tv_show_photo">
     <item>@drawable/poster_all</item>
     <item>@drawable/poster_captain</item>
@@ -79,5 +79,5 @@
     <item>@drawable/poster_val</item>
   </array>
 
-  <string name="change_language_settings">Change Language Settings</string>ff
+  <string name="change_language_settings">Ubah bahasa</string>ff
 </resources>
