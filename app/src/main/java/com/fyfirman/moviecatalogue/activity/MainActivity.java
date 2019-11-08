@@ -20,47 +20,49 @@ import com.fyfirman.moviecatalogue.fragment.TvShowFragment;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        initTabLayout();
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    initTabLayout();
+  }
+
+  private void initTabLayout() {
+    // setting toolbar
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
+    // setting view pager
+    ViewPager viewPager = findViewById(R.id.view_pager);
+    setupViewPager(viewPager);
+
+    // setting tabLayout
+    TabLayout tabLayout = findViewById(R.id.tab_layout);
+    tabLayout.setupWithViewPager(viewPager);
+  }
+
+  private void setupViewPager(ViewPager viewPager) {
+    MainFragmentPagerAdapter mainFragmentPagerAdapter = new MainFragmentPagerAdapter(
+        getSupportFragmentManager());
+    mainFragmentPagerAdapter.addFragment(new MoviesFragment(), getString(R.string.movies));
+    mainFragmentPagerAdapter.addFragment(new TvShowFragment(), getString(R.string.tv_show));
+    viewPager.setAdapter(mainFragmentPagerAdapter);
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.main_menu, menu);
+    return super.onCreateOptionsMenu(menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    if (item.getItemId() == R.id.action_change_settings) {
+      Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+      startActivity(mIntent);
     }
-
-    private void initTabLayout(){
-        // setting toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        // setting view pager
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        setupViewPager(viewPager);
-
-        // setting tabLayout
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-        tabLayout.setupWithViewPager(viewPager);
-    }
-
-    private void setupViewPager(ViewPager viewPager) {
-        MainFragmentPagerAdapter mainFragmentPagerAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager());
-        mainFragmentPagerAdapter.addFragment(new MoviesFragment(), getString(R.string.movies));
-        mainFragmentPagerAdapter.addFragment(new TvShowFragment(), getString(R.string.tv_show));
-        viewPager.setAdapter(mainFragmentPagerAdapter);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_change_settings) {
-            Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-            startActivity(mIntent);
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    return super.onOptionsItemSelected(item);
+  }
 }
