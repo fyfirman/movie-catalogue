@@ -17,19 +17,21 @@ import com.fyfirman.moviecatalogue.data.Movie;
 import java.util.ArrayList;
 
 public class MoviesFragment extends Fragment {
+
   private RecyclerView rvMovie;
   private ArrayList<Movie> listMovie = new ArrayList<>();
 
   @Nullable
   @Override
-  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+      @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_movies, container, false);
     showRecyclerList(view);
 
     return view;
   }
 
-  public ArrayList<Movie> getListMovie(){
+  public ArrayList<Movie> getListMovie() {
     String[] dataTitle = getResources().getStringArray(R.array.data_title);
     String[] dataSynopsis = getResources().getStringArray(R.array.data_synopsis);
     TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
@@ -39,13 +41,13 @@ public class MoviesFragment extends Fragment {
       Movie movie = new Movie();
       movie.setTitle(dataTitle[i]);
       movie.setSynopsis(dataSynopsis[i]);
-      movie.setPhoto(dataPhoto.getResourceId(i,1));
+      movie.setPhoto(dataPhoto.getResourceId(i, 1));
       listMovie.add(movie);
     }
     return listMovie;
   }
 
-  private void showRecyclerList(View view){
+  private void showRecyclerList(View view) {
     //mencari referensi recycle view
     rvMovie = view.findViewById(R.id.rv_movie);
     rvMovie.setHasFixedSize(true);
@@ -69,7 +71,7 @@ public class MoviesFragment extends Fragment {
     });
   }
 
-  private void showSelectedMovie(Movie data){
+  private void showSelectedMovie(Movie data) {
 //    Toast toast = Toast.makeText(getActivity(),"Hello TV Show!",Toast.LENGTH_SHORT);
 //    toast.show();
 

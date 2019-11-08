@@ -14,27 +14,28 @@ import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
 import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
-import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
 import java.util.ArrayList;
 
 public class TvShowFragment extends Fragment {
+
   private RecyclerView rvTvShow;
   private ArrayList<Tv_Show> listTvShow = new ArrayList<>();
 
   @Nullable
   @Override
-  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+      @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_tv_show, container, false);
     showRecyclerList(view);
 
     return view;
   }
 
-  private void initTvShow(){
+  private void initTvShow() {
   }
 
 
-  public ArrayList<Tv_Show> getListTvShow(){
+  public ArrayList<Tv_Show> getListTvShow() {
     String[] dataTitle = getResources().getStringArray(R.array.tv_show_title);
     String[] dataSynopsis = getResources().getStringArray(R.array.tv_show_synopsis);
     TypedArray dataPhoto = getResources().obtainTypedArray(R.array.tv_show_photo);
@@ -44,13 +45,13 @@ public class TvShowFragment extends Fragment {
       Tv_Show tv_show = new Tv_Show();
       tv_show.setTitle(dataTitle[i]);
       tv_show.setSynopsis(dataSynopsis[i]);
-      tv_show.setPhoto(dataPhoto.getResourceId(i,1));
+      tv_show.setPhoto(dataPhoto.getResourceId(i, 1));
       listTvShow.add(tv_show);
     }
     return listTvShow;
   }
 
-  private void showRecyclerList(View view){
+  private void showRecyclerList(View view) {
     //mencari referensi recycle view
     rvTvShow = view.findViewById(R.id.rv_tv_show);
     rvTvShow.setHasFixedSize(true);
@@ -74,7 +75,7 @@ public class TvShowFragment extends Fragment {
     });
   }
 
-  private void showSelectedTvShow(Tv_Show data){
+  private void showSelectedTvShow(Tv_Show data) {
 //    Toast toast = Toast.makeText(getActivity(),"Hello TV Show!",Toast.LENGTH_SHORT);
 //    toast.show();
 

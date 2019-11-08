@@ -8,6 +8,7 @@ import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.data.Movie;
 
 public class DetailMovieActivity extends AppCompatActivity {
+
   public static final String EXTRA_MOVIE = "default_extra";
   private ImageView imgPhoto;
   private TextView txtTitle;
@@ -22,7 +23,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     bindView(movie);
   }
 
-  private void bindView(Movie movie){
+  private void bindView(Movie movie) {
     imgPhoto = findViewById(R.id.img_photo);
     txtTitle = findViewById(R.id.movie_title);
     txtSynopsis = findViewById(R.id.movie_synopsis);
