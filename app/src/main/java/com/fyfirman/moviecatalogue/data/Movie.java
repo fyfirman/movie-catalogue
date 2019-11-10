@@ -4,20 +4,31 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Movie implements android.os.Parcelable {
+  final String base_url = "https://image.tmdb.org/t/p/";
+  final String poster_size = "w185/";
 
-  private int photo;
+  private String poster_path;
   private String title;
-  private String synopsis;
+
+  public String getOverview() {
+    return overview;
+  }
+
+  public void setOverview(String overview) {
+    this.overview = overview;
+  }
+
+  private String overview;
 
   public Movie() {
   }
 
-  public int getPhoto() {
-    return photo;
+  public String getPoster_path() {
+    return base_url+poster_size+poster_path;
   }
 
-  public void setPhoto(int photo) {
-    this.photo = photo;
+  public void setPoster_path(String poster_path) {
+    this.poster_path = poster_path;
   }
 
   public String getTitle() {
@@ -28,14 +39,6 @@ public class Movie implements android.os.Parcelable {
     this.title = title;
   }
 
-  public String getSynopsis() {
-    return synopsis;
-  }
-
-  public void setSynopsis(String synopsis) {
-    this.synopsis = synopsis;
-  }
-
   @Override
   public int describeContents() {
     return 0;
@@ -43,15 +46,15 @@ public class Movie implements android.os.Parcelable {
 
   @Override
   public void writeToParcel(Parcel dest, int flags) {
-    dest.writeInt(this.photo);
+    dest.writeString(this.poster_path);
     dest.writeString(this.title);
-    dest.writeString(this.synopsis);
+    dest.writeString(this.overview);
   }
 
   protected Movie(Parcel in) {
-    this.photo = in.readInt();
     this.title = in.readString();
-    this.synopsis = in.readString();
+    this.overview = in.readString();
+    this.poster_path = in.readString();
   }
 
   public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {

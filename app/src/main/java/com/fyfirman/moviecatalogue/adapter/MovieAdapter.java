@@ -1,5 +1,6 @@
 package com.fyfirman.moviecatalogue.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -8,19 +9,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.data.Movie;
-import com.fyfirman.moviecatalogue.data.Tv_Show;
 import java.util.ArrayList;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHolder>  {
-  private ArrayList<Movie> listMovie;
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHolder> {
 
-  public MovieAdapter(ArrayList<Movie> list) {
+  private ArrayList<Movie> listMovie;
+  private Context context;
+
+  public MovieAdapter(Context context, ArrayList<Movie> list) {
+    this.context = context;
     this.listMovie = list;
   }
 
   public class ListViewHolder extends ViewHolder {
+
     ImageView imgPhoto;
     TextView tvTitle, tvSynopsis;
 
@@ -30,6 +35,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
       tvTitle = itemView.findViewById(R.id.tv_show_title);
       tvSynopsis = itemView.findViewById(R.id.tv_show_synopsis);
     }
+  }
+
+  public void setData(ArrayList<Movie> items) {
+    listMovie.clear();
+    listMovie.addAll(items);
+    notifyDataSetChanged();
   }
 
   @NonNull
@@ -44,9 +55,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
   public void onBindViewHolder(@NonNull final ListViewHolder listViewHolder, int i) {
     Movie movie = listMovie.get(i);
 
-    listViewHolder.imgPhoto.setImageResource(movie.getPhoto());
     listViewHolder.tvTitle.setText(movie.getTitle());
-    listViewHolder.tvSynopsis.setText(movie.getSynopsis());
+    listViewHolder.tvSynopsis.setText(movie.getOverview());
+    Glide.with(context)
+        .load(movie.getPoster_path())
+        .into(listViewHolder.imgPhoto);
 
     listViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -68,6 +81,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
   }
 
   public interface OnItemClickCallback {
+
     void onItemClicked(Movie data);
   }
 }
