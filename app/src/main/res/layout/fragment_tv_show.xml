@@ -6,10 +6,17 @@
   tools:context=".fragment.TvShowFragment">
 
   <LinearLayout
-    android:layout_marginTop="?attr/actionBarSize"
-    android:paddingTop="?attr/actionBarSize"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="?attr/actionBarSize">
+    <ProgressBar
+      android:id="@+id/indeterminateBar"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginTop="175dp" />
     <android.support.v7.widget.RecyclerView
       android:id="@+id/rv_tv_show"
       android:layout_width="match_parent"

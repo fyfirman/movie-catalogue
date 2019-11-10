@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
 import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
@@ -24,6 +26,7 @@ public class TvShowFragment extends Fragment {
   private ArrayList<Tv_Show> listTvShow = new ArrayList<>();
   private TvShowViewModel tvShowViewModel;
   private ListTvShowAdapter listTvShowAdapter;
+  private ProgressBar progressBar;
 
   @Nullable
   @Override
@@ -35,6 +38,16 @@ public class TvShowFragment extends Fragment {
     return view;
   }
 
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+
+    progressBar = getView().findViewById(R.id.indeterminateBar);
+    showLoading(true);
+
+    showRecyclerList(view);
+
+  }
 
   private void showRecyclerList(View view) {
     //mencari referensi recycle view
@@ -45,7 +58,7 @@ public class TvShowFragment extends Fragment {
     rvTvShow.setLayoutManager(new LinearLayoutManager(getActivity()));
 
     //set adapter
-    listTvShowAdapter = new ListTvShowAdapter(getContext(),listTvShow);
+    listTvShowAdapter = new ListTvShowAdapter(getContext(), listTvShow);
     rvTvShow.setAdapter(listTvShowAdapter);
 
     //buat onclick callback function
@@ -56,16 +69,18 @@ public class TvShowFragment extends Fragment {
       }
     });
 
-    tvShowViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(TvShowViewModel.class);
+    tvShowViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory())
+        .get(TvShowViewModel.class);
 
     tvShowViewModel.setData();
 
 //    Observe
-    tvShowViewModel.getData().observe(this,new Observer<ArrayList<Tv_Show>>() {
+    tvShowViewModel.getData().observe(this, new Observer<ArrayList<Tv_Show>>() {
       @Override
       public void onChanged(ArrayList<Tv_Show> mModels) {
         if (mModels != null) {
           listTvShowAdapter.setData(mModels);
+          showLoading(false);
         }
       }
     });
@@ -79,5 +94,13 @@ public class TvShowFragment extends Fragment {
 
     showDetailTvShow.putExtra(DetailTvShowActivity.EXTRA_TV_SHOW, data);
     startActivity(showDetailTvShow);
+  }
+
+  private void showLoading(Boolean state) {
+    if (state) {
+      progressBar.setVisibility(View.VISIBLE);
+    } else {
+      progressBar.setVisibility(View.GONE);
+    }
   }
 }
