@@ -21,7 +21,7 @@ public class TvShowViewModel extends ViewModel {
 
     AsyncHttpClient client = new AsyncHttpClient();
 
-    String url = "https://api.themoviedb.org/3/discover/movie?api_key=b8d05a72822a6e82cf552ec84fc42c85&language=en-US";
+    String url = "https://api.themoviedb.org/3/discover/tv?api_key=b8d05a72822a6e82cf552ec84fc42c85&language=en-US";
 
     client.get(url, new AsyncHttpResponseHandler() {
       @Override
@@ -38,7 +38,7 @@ public class TvShowViewModel extends ViewModel {
             JSONObject jsonObject = list.getJSONObject(i);
 
             Tv_Show tvShow = new Tv_Show();
-            tvShow.setTitle(jsonObject.getString("title"));
+            tvShow.setTitle(jsonObject.getString("name"));
             tvShow.setOverview(jsonObject.getString("overview"));
             tvShow.setPoster_path(jsonObject.getString("poster_path"));
 
