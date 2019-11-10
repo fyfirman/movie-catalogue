@@ -46,9 +46,9 @@ public class Movie implements android.os.Parcelable {
 
   @Override
   public void writeToParcel(Parcel dest, int flags) {
-    dest.writeString(this.poster_path);
     dest.writeString(this.title);
     dest.writeString(this.overview);
+    dest.writeString(this.poster_path);
   }
 
   protected Movie(Parcel in) {

@@ -46,9 +46,9 @@ public class Tv_Show implements Parcelable {
 
   @Override
   public void writeToParcel(Parcel dest, int flags) {
-    dest.writeString(this.poster_path);
     dest.writeString(this.title);
     dest.writeString(this.overview);
+    dest.writeString(this.poster_path);
   }
 
   protected Tv_Show(Parcel in) {
