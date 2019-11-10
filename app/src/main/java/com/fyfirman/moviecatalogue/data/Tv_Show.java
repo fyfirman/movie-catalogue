@@ -1,19 +1,34 @@
 package com.fyfirman.moviecatalogue.data;
 
 import android.os.Parcel;
-import android.os.Parcelable.Creator;
+import android.os.Parcelable;
 
-public class Tv_Show implements android.os.Parcelable {
-  private int photo;
+public class Tv_Show implements Parcelable {
+  final String base_url = "https://image.tmdb.org/t/p/";
+  final String poster_size = "w185/";
+
+  private String poster_path;
   private String title;
-  private String synopsis;
 
-  public int getPhoto() {
-    return photo;
+  public String getOverview() {
+    return overview;
   }
 
-  public void setPhoto(int photo) {
-    this.photo = photo;
+  public void setOverview(String overview) {
+    this.overview = overview;
+  }
+
+  private String overview;
+
+  public Tv_Show() {
+  }
+
+  public String getPoster_path() {
+    return base_url+poster_size+poster_path;
+  }
+
+  public void setPoster_path(String poster_path) {
+    this.poster_path = poster_path;
   }
 
   public String getTitle() {
@@ -24,15 +39,6 @@ public class Tv_Show implements android.os.Parcelable {
     this.title = title;
   }
 
-  public String getSynopsis() {
-    return synopsis;
-  }
-
-  public void setSynopsis(String synopsis) {
-    this.synopsis = synopsis;
-  }
-
-
   @Override
   public int describeContents() {
     return 0;
@@ -40,21 +46,18 @@ public class Tv_Show implements android.os.Parcelable {
 
   @Override
   public void writeToParcel(Parcel dest, int flags) {
-    dest.writeInt(this.photo);
+    dest.writeString(this.poster_path);
     dest.writeString(this.title);
-    dest.writeString(this.synopsis);
-  }
-
-  public Tv_Show() {
+    dest.writeString(this.overview);
   }
 
   protected Tv_Show(Parcel in) {
-    this.photo = in.readInt();
     this.title = in.readString();
-    this.synopsis = in.readString();
+    this.overview = in.readString();
+    this.poster_path = in.readString();
   }
 
-  public static final Creator<Tv_Show> CREATOR = new Creator<Tv_Show>() {
+  public static final Parcelable.Creator<Tv_Show> CREATOR = new Parcelable.Creator<Tv_Show>() {
     @Override
     public Tv_Show createFromParcel(Parcel source) {
       return new Tv_Show(source);

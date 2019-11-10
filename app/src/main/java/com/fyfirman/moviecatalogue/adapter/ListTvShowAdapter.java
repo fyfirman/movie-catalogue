@@ -1,5 +1,6 @@
 package com.fyfirman.moviecatalogue.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -8,18 +9,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
 import java.util.ArrayList;
 
-public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.ListViewHolder>  {
-  private ArrayList<Tv_Show> listTvShow;
+public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.ListViewHolder> {
 
-  public ListTvShowAdapter(ArrayList<Tv_Show> list) {
+  private ArrayList<Tv_Show> listTvShow;
+  private Context context;
+
+  public ListTvShowAdapter(Context context, ArrayList<Tv_Show> list) {
+    this.context = context;
     this.listTvShow = list;
   }
 
   public class ListViewHolder extends ViewHolder {
+
     ImageView imgPhoto;
     TextView tvTitle, tvSynopsis;
 
@@ -29,6 +35,12 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
       tvTitle = itemView.findViewById(R.id.tv_show_title);
       tvSynopsis = itemView.findViewById(R.id.tv_show_synopsis);
     }
+  }
+
+  public void setData(ArrayList<Tv_Show> items) {
+    listTvShow.clear();
+    listTvShow.addAll(items);
+    notifyDataSetChanged();
   }
 
   @NonNull
@@ -43,9 +55,11 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
   public void onBindViewHolder(@NonNull final ListViewHolder listViewHolder, int i) {
     Tv_Show tv_show = listTvShow.get(i);
 
-    listViewHolder.imgPhoto.setImageResource(tv_show.getPhoto());
     listViewHolder.tvTitle.setText(tv_show.getTitle());
-    listViewHolder.tvSynopsis.setText(tv_show.getSynopsis());
+    listViewHolder.tvSynopsis.setText(tv_show.getOverview());
+    Glide.with(context)
+        .load(tv_show.getPoster_path())
+        .into(listViewHolder.imgPhoto);
 
     listViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -67,6 +81,7 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
   }
 
   public interface OnItemClickCallback {
+
     void onItemClicked(Tv_Show data);
   }
 }

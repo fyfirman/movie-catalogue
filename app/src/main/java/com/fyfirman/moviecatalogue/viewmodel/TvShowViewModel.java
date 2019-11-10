@@ -4,7 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Log;
-import com.fyfirman.moviecatalogue.data.Movie;
+import com.fyfirman.moviecatalogue.data.Tv_Show;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import cz.msebera.android.httpclient.Header;
@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class MovieViewModel extends ViewModel {
+public class TvShowViewModel extends ViewModel {
 
-  private MutableLiveData<ArrayList<Movie>> listMovies = new MutableLiveData<>();
+  private MutableLiveData<ArrayList<Tv_Show>> listTvShow = new MutableLiveData<>();
 
   public void setData() {
-    final ArrayList<Movie> listItems = new ArrayList<>();
+    final ArrayList<Tv_Show> listItems = new ArrayList<>();
 
     AsyncHttpClient client = new AsyncHttpClient();
 
@@ -37,14 +37,14 @@ public class MovieViewModel extends ViewModel {
           for (int i = 0; i < list.length(); i++) {
             JSONObject jsonObject = list.getJSONObject(i);
 
-            Movie movie = new Movie();
-            movie.setTitle(jsonObject.getString("title"));
-            movie.setOverview(jsonObject.getString("overview"));
-            movie.setPoster_path(jsonObject.getString("poster_path"));
+            Tv_Show tvShow = new Tv_Show();
+            tvShow.setTitle(jsonObject.getString("title"));
+            tvShow.setOverview(jsonObject.getString("overview"));
+            tvShow.setPoster_path(jsonObject.getString("poster_path"));
 
-            listItems.add(movie);
+            listItems.add(tvShow);
           }
-          listMovies.postValue(listItems);
+          listTvShow.postValue(listItems);
         } catch (Exception e) {
           Log.d("Exception", e.getMessage());
         }
@@ -58,7 +58,7 @@ public class MovieViewModel extends ViewModel {
     });
   }
 
-  public LiveData<ArrayList<Movie>> getData() {
-    return listMovies;
+  public LiveData<ArrayList<Tv_Show>> getData() {
+    return listTvShow;
   }
 }

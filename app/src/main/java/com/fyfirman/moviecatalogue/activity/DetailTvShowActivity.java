@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
 
@@ -12,7 +13,7 @@ public class DetailTvShowActivity extends AppCompatActivity {
   public static final String EXTRA_TV_SHOW = "default_extra";
   private ImageView imgPhoto;
   private TextView txtTitle;
-  private TextView txtSynopsis;
+  private TextView txtOverview;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,12 @@ public class DetailTvShowActivity extends AppCompatActivity {
   private void bindView(Tv_Show tv_show) {
     imgPhoto = findViewById(R.id.img_photo);
     txtTitle = findViewById(R.id.tv_show_title);
-    txtSynopsis = findViewById(R.id.tv_show_synopsis);
+    txtOverview = findViewById(R.id.tv_show_synopsis);
 
-    imgPhoto.setImageResource(tv_show.getPhoto());
     txtTitle.setText(tv_show.getTitle());
-    txtSynopsis.setText(tv_show.getSynopsis());
+    txtOverview.setText(tv_show.getOverview());
+    Glide.with(getApplicationContext())
+        .load(tv_show.getPoster_path())
+        .into(imgPhoto);
   }
 }
