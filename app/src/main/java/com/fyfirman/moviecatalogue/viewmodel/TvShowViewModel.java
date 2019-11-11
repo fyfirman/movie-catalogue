@@ -16,14 +16,15 @@ public class TvShowViewModel extends ViewModel {
 
   private MutableLiveData<ArrayList<Tv_Show>> listTvShow = new MutableLiveData<>();
 
-  public void setData() {
+  public void setData(String language) {
     final ArrayList<Tv_Show> listItems = new ArrayList<>();
 
     AsyncHttpClient client = new AsyncHttpClient();
 
-    String url = "https://api.themoviedb.org/3/discover/tv?api_key=b8d05a72822a6e82cf552ec84fc42c85&language=en-US";
+    String url = "https://api.themoviedb.org/3/discover/tv?";
+    String api_key = "b8d05a72822a6e82cf552ec84fc42c85";
 
-    client.get(url, new AsyncHttpResponseHandler() {
+    client.get(url + "api_key=" + api_key + "&language=" + language, new AsyncHttpResponseHandler() {
       @Override
       public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
         try {

@@ -2,6 +2,7 @@
   <string name="app_name">Movie Catalogue</string>
   <string name="movies">Movies</string>
   <string name="tv_show">TV Show</string>
+  <string name="language">en-US</string>
 
   <!--Detail Activity Values-->
   <string name="overview">Overview</string>

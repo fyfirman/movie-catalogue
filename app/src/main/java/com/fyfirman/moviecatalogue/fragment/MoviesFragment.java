@@ -71,7 +71,7 @@ public class MoviesFragment extends Fragment {
     movieViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory())
         .get(MovieViewModel.class);
 
-    movieViewModel.setData();
+    movieViewModel.setData(getResources().getString(R.string.language));
 
 //    Observe
     movieViewModel.getData().observe(this, new Observer<ArrayList<Movie>>() {

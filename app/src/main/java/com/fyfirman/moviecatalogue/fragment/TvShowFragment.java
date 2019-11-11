@@ -72,7 +72,7 @@ public class TvShowFragment extends Fragment {
     tvShowViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory())
         .get(TvShowViewModel.class);
 
-    tvShowViewModel.setData();
+    tvShowViewModel.setData(getResources().getString(R.string.language));
 
 //    Observe
     tvShowViewModel.getData().observe(this, new Observer<ArrayList<Tv_Show>>() {
