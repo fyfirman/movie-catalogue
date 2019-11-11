@@ -4,11 +4,33 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Movie implements android.os.Parcelable {
+
   final String base_url = "https://image.tmdb.org/t/p/";
   final String poster_size = "w185/";
 
+  private int id;
   private String poster_path;
   private String title;
+  private String overview;
+
+  public Movie() {
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
   public String getOverview() {
     return overview;
@@ -18,25 +40,12 @@ public class Movie implements android.os.Parcelable {
     this.overview = overview;
   }
 
-  private String overview;
-
-  public Movie() {
-  }
-
   public String getPoster_path() {
-    return base_url+poster_size+poster_path;
+    return base_url + poster_size + poster_path;
   }
 
   public void setPoster_path(String poster_path) {
     this.poster_path = poster_path;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
   }
 
   @Override

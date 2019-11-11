@@ -39,6 +39,7 @@ public class MovieViewModel extends ViewModel {
             JSONObject jsonObject = list.getJSONObject(i);
 
             Movie movie = new Movie();
+            movie.setId(jsonObject.getInt("id"));
             movie.setTitle(jsonObject.getString("title"));
             movie.setOverview(jsonObject.getString("overview"));
             movie.setPoster_path(jsonObject.getString("poster_path"));
