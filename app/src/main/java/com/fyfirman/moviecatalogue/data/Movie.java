@@ -8,7 +8,7 @@ public class Movie implements android.os.Parcelable {
   final String base_url = "https://image.tmdb.org/t/p/";
   final String poster_size = "w185/";
 
-  private int id;
+  private Integer id;
   private String poster_path;
   private String title;
   private String overview;
@@ -16,11 +16,11 @@ public class Movie implements android.os.Parcelable {
   public Movie() {
   }
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
