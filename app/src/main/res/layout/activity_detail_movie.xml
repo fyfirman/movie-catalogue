@@ -8,6 +8,14 @@
   android:layout_height="match_parent"
   android:orientation="vertical"
   tools:context=".activity.DetailMovieActivity">
+  <ProgressBar
+    android:id="@+id/indeterminateBar"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
   <ImageView
     android:id="@+id/img_photo"
     android:layout_width="150dp"
@@ -36,7 +44,7 @@
     app:layout_constraintStart_toEndOf="@+id/img_photo"
     app:layout_constraintTop_toTopOf="parent"/>
   <TextView
-    android:id="@+id/textView"
+    android:id="@+id/txtOverView"
     android:textStyle="bold"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -65,7 +73,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="1.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView"/>
+    app:layout_constraintTop_toBottomOf="@+id/txtOverView"/>
 
 
 </android.support.constraint.ConstraintLayout>
