@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.fragment.ExploreFragment;
 import com.fyfirman.moviecatalogue.fragment.FavoriteFragment;
+import com.fyfirman.moviecatalogue.fragment.MoviesFavoriteFragment;
 import com.fyfirman.moviecatalogue.fragment.MoviesFragment;
 import com.fyfirman.moviecatalogue.fragment.TvShowFragment;
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    loadFragment(new FavoriteFragment());
+    loadFragment(new MoviesFragment());
 
     initBottomNavigation();
   }
@@ -51,13 +52,12 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
     Fragment fragment = null;
     switch (item.getItemId()) {
-      case R.id.explore_menu:
-        fragment = new ExploreFragment();
+      case R.id.movies_menu:
+        fragment = new MoviesFragment();
         break;
-//        TODO: For assigment 5
-//      case R.id.search_menu:
-//        fragment = new SearchFragment();
-//        break;
+      case R.id.tv_show_menu:
+        fragment = new TvShowFragment();
+        break;
       case R.id.favorite_menu:
         fragment = new FavoriteFragment();
         break;
