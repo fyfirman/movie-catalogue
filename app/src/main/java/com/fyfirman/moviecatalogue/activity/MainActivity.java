@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.fragment.ExploreFragment;
+import com.fyfirman.moviecatalogue.fragment.FavoriteFragment;
 import com.fyfirman.moviecatalogue.fragment.MoviesFragment;
 import com.fyfirman.moviecatalogue.fragment.TvShowFragment;
 
@@ -53,12 +54,12 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
       case R.id.explore_menu:
         fragment = new ExploreFragment();
         break;
-//        TODO: For assigment 5 & ubah juga fragmentnya
+//        TODO: For assigment 5
 //      case R.id.search_menu:
 //        fragment = new SearchFragment();
 //        break;
       case R.id.favorite_menu:
-        fragment = new TvShowFragment();
+        fragment = new FavoriteFragment();
         break;
     }
     return loadFragment(fragment);
