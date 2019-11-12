@@ -79,6 +79,7 @@ public class MoviesFragment extends Fragment {
       public void onChanged(ArrayList<Movie> mModels) {
         if (mModels != null) {
           movieAdapter.setData(mModels);
+          movieAdapter.notifyDataSetChanged();
           showLoading(false);
         }
       }

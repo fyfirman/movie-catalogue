@@ -73,6 +73,7 @@ public class DetailMovieActivity extends AppCompatActivity {
   public void getFavoriteState() {
     Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
     movieAdapter.setData(movieFavoriteHelper.selectMovie(movie.getId().toString()));
+    movieAdapter.notifyDataSetChanged();
 
     if (movieAdapter.getItemCount() > 0) {
       isFavorite = true;

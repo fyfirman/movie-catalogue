@@ -54,8 +54,15 @@ public class MoviesFavoriteFragment extends Fragment {
       ArrayList<Movie> movie = savedInstanceState.getParcelableArrayList(EXTRA_STATE);
       if (movie != null) {
         movieAdapter.setData(movie);
+        movieAdapter.notifyDataSetChanged();
       }
     }
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    new LoadMovieFavoriteData().execute();
   }
 
   private void showRecyclerList(View view) {
@@ -111,6 +118,7 @@ public class MoviesFavoriteFragment extends Fragment {
     @Override
     protected void onPostExecute(Void aVoid) {
       super.onPostExecute(aVoid);
+      movieAdapter.notifyDataSetChanged();
       showLoading(false);
     }
   }
