@@ -45,6 +45,10 @@ public class Movie implements android.os.Parcelable {
   }
 
   public void setPoster_path(String poster_path) {
+    if(poster_path.contains(base_url)){
+      poster_path.replace(base_url,"");
+      poster_path.replace(poster_size,"");
+    }
     this.poster_path = poster_path;
   }
 
