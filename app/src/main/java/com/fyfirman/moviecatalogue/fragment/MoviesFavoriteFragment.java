@@ -17,7 +17,6 @@ import com.fyfirman.moviecatalogue.activity.DetailMovieActivity;
 import com.fyfirman.moviecatalogue.adapter.MovieAdapter;
 import com.fyfirman.moviecatalogue.data.Movie;
 import com.fyfirman.moviecatalogue.database.MovieFavoriteHelper;
-import com.fyfirman.moviecatalogue.viewmodel.MovieViewModel;
 import java.util.ArrayList;
 
 public class MoviesFavoriteFragment extends Fragment {
@@ -104,7 +103,8 @@ public class MoviesFavoriteFragment extends Fragment {
 
     @Override
     protected Void doInBackground(Void... voids) {
-      movieAdapter.setData(movieFavoriteHelper.selectMovie());
+      ArrayList<Movie> data = movieFavoriteHelper.selectMovie();
+      movieAdapter.setData(data);
       return null;
     }
 
