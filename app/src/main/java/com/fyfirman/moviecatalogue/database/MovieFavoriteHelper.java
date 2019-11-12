@@ -11,6 +11,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import com.fyfirman.moviecatalogue.data.Movie;
 import java.util.ArrayList;
 
@@ -121,7 +122,7 @@ public class MovieFavoriteHelper {
     args.put(id, movie.getId());
     args.put(title, movie.getTitle());
     args.put(overview, movie.getOverview());
-    args.put(poster_path, movie.getPoster_path());
+    args.put(poster_path, movie.getPoster_path().substring(31)); //31 is last link character
     sqLiteDatabase.insert(DATABASE_TABLE, null, args);
   }
 
