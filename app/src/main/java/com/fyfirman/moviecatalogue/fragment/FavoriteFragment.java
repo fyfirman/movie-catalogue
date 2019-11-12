@@ -47,8 +47,8 @@ public class FavoriteFragment extends Fragment {
   private void setupViewPager(ViewPager viewPager) {
     MainFragmentPagerAdapter mainFragmentPagerAdapter = new MainFragmentPagerAdapter(
         getActivity().getSupportFragmentManager());
-    mainFragmentPagerAdapter.addFragment(new MoviesFragment(), getString(R.string.movies));
-    mainFragmentPagerAdapter.addFragment(new TvShowFragment(), getString(R.string.tv_show));
+    mainFragmentPagerAdapter.addFragment(new MoviesFavoriteFragment(), getString(R.string.movies));
+    mainFragmentPagerAdapter.addFragment(new TvShowFavoriteFragment(), getString(R.string.tv_show));
     viewPager.setAdapter(mainFragmentPagerAdapter);
   }
 
