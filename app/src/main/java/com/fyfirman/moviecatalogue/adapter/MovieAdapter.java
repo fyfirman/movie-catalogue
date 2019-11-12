@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,10 +43,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
     }
   }
 
+  public ArrayList<Movie> getListMovie(){
+    return listMovie;
+  }
+
   public void setData(ArrayList<Movie> items) {
-    listMovie.clear();
-    listMovie.addAll(items);
-    notifyDataSetChanged();
+    try {
+      listMovie.clear();
+      listMovie.addAll(items);
+      notifyDataSetChanged();
+    }catch (Exception e){
+      Log.d("Error", e.toString());
+    }
   }
 
   @NonNull
