@@ -8,10 +8,8 @@
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="?attr/actionBarSize"
     android:gravity="center"
-    android:orientation="vertical"
-    android:paddingTop="?attr/actionBarSize">
+    android:orientation="vertical">
     <ProgressBar
       android:id="@+id/indeterminateBar"
       android:layout_width="100dp"
