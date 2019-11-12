@@ -48,13 +48,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ListViewHold
   }
 
   public void setData(ArrayList<Movie> items) {
-    try {
-      listMovie.clear();
-      listMovie.addAll(items);
-      notifyDataSetChanged();
-    }catch (Exception e){
-      Log.d("Error", e.toString());
-    }
+    listMovie.clear();
+    listMovie.addAll(items);
+//    Makes error cause this method calling UI, but this can be running with async
+//      notifyDataSetChanged();
   }
 
   @NonNull
