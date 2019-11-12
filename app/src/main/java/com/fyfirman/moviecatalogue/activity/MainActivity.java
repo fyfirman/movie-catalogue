@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
-//    TODO: Ubah Ini
-    loadFragment(new ExploreFragment());
+
+    loadFragment(new FavoriteFragment());
 
     initBottomNavigation();
   }
