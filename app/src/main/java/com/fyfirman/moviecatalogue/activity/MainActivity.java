@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.fyfirman.moviecatalogue.R;
+import com.fyfirman.moviecatalogue.fragment.ExploreFragment;
 import com.fyfirman.moviecatalogue.fragment.MoviesFragment;
 import com.fyfirman.moviecatalogue.fragment.TvShowFragment;
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 //    TODO: Ubah Ini
-    loadFragment(new MoviesFragment());
+    loadFragment(new ExploreFragment());
 
     initBottomNavigation();
   }
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     Fragment fragment = null;
     switch (item.getItemId()) {
       case R.id.explore_menu:
-        fragment = new MoviesFragment();
+        fragment = new ExploreFragment();
         break;
 //        TODO: For assigment 5 & ubah juga fragmentnya
 //      case R.id.search_menu:
