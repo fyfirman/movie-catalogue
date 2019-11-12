@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<!--TODO: Remove harcoded String-->
   <item
     android:id="@+id/explore_menu"
     android:icon="@drawable/ic_explore_black_24dp"
     android:title="Explore" />
   <item
-    android:id="@+id/search_menu"
+    android:id="@+id/favorite_menu"
     android:icon="@drawable/ic_added_to_favorites"
     android:title="Favorites" />
 <!--  <item-->
