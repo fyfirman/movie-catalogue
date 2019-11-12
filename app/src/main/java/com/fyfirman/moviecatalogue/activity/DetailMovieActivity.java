@@ -26,7 +26,7 @@ public class DetailMovieActivity extends AppCompatActivity {
   private TextView txtOverview;
   private ProgressBar progressBar;
   private TextView txtOverviewHeader;
-  private Boolean isFavorite;
+  private Boolean isFavorite = false ;
   private MovieAdapter movieAdapter = new MovieAdapter(this);
   private MovieFavoriteHelper movieFavoriteHelper;
   private Menu menuItem = null;

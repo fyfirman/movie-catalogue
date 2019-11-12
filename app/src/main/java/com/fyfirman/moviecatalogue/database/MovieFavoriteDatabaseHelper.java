@@ -16,8 +16,6 @@ public class MovieFavoriteDatabaseHelper extends SQLiteOpenHelper {
           + " ( %s TEXT," +
           " %s TEXT," +
           " %s TEXT," +
-          " %s TEXT," +
-          " %s TEXT," +
           " %s TEXT)",
       table_name,
       MovieFavoriteDatabaseContract.MovieFavoriteDatabaseColumns.id,
