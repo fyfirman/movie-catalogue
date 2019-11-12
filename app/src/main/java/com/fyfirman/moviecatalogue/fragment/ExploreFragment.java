@@ -46,7 +46,7 @@ public class ExploreFragment extends Fragment {
 
   private void setupViewPager(ViewPager viewPager) {
     MainFragmentPagerAdapter mainFragmentPagerAdapter = new MainFragmentPagerAdapter(
-        getActivity().getSupportFragmentManager());
+        getChildFragmentManager());
     mainFragmentPagerAdapter.addFragment(new MoviesFragment(), getString(R.string.movies));
     mainFragmentPagerAdapter.addFragment(new TvShowFragment(), getString(R.string.tv_show));
     viewPager.setAdapter(mainFragmentPagerAdapter);

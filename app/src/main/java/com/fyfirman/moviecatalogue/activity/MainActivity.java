@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    loadFragment(new MoviesFragment());
+    loadFragment(new ExploreFragment());
 
     initBottomNavigation();
   }
@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
     Fragment fragment = null;
     switch (item.getItemId()) {
-      case R.id.movies_menu:
-        fragment = new MoviesFragment();
+      case R.id.explore_menu:
+        fragment = new ExploreFragment();
         break;
-      case R.id.tv_show_menu:
-        fragment = new TvShowFragment();
-        break;
+//      case R.id.tv_show_menu:
+//        fragment = new TvShowFragment();
+//        break;
       case R.id.favorite_menu:
         fragment = new FavoriteFragment();
         break;
