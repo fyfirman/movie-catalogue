@@ -59,17 +59,17 @@ public class TvShowFavoriteHelper {
 
     cursor.moveToFirst();
 
-    Movie movie;
+    Tv_Show tv_show;
 
     if (cursor.getCount() > 0) {
       do {
-        movie = new Movie();
-        movie.setId(cursor.getInt(cursor.getColumnIndexOrThrow(id)));
-        movie.setTitle(cursor.getString(cursor.getColumnIndexOrThrow(name)));
-        movie.setOverview(cursor.getString(cursor.getColumnIndexOrThrow(overview)));
-        movie.setPoster_path(cursor.getString(cursor.getColumnIndexOrThrow(poster_path)));
+        tv_show = new Tv_Show();
+        tv_show.setId(cursor.getInt(cursor.getColumnIndexOrThrow(id)));
+        tv_show.setTitle(cursor.getString(cursor.getColumnIndexOrThrow(name)));
+        tv_show.setOverview(cursor.getString(cursor.getColumnIndexOrThrow(overview)));
+        tv_show.setPoster_path(cursor.getString(cursor.getColumnIndexOrThrow(poster_path)));
 
-        arrayList.add(movie);
+        arrayList.add(tv_show);
         cursor.moveToNext();
 
       } while (!cursor.isAfterLast());
@@ -78,8 +78,8 @@ public class TvShowFavoriteHelper {
     return arrayList;
   }
 
-  public ArrayList<Movie> selectTvShow(String movie_id) {
-    ArrayList<Movie> arrayList = new ArrayList<>();
+  public ArrayList<Tv_Show> selectTvShow(String movie_id) {
+    ArrayList<Tv_Show> arrayList = new ArrayList<>();
 
     sqLiteDatabase = movieDatabaseHelper.getReadableDatabase();
 
