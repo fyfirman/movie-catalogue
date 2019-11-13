@@ -8,7 +8,7 @@ public class Tv_Show implements Parcelable {
   final String base_url = "https://image.tmdb.org/t/p/";
   final String poster_size = "w185/";
 
-  Integer id;
+  private Integer id;
   private String poster_path;
   private String title;
   private String overview;
