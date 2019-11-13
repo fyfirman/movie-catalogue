@@ -17,6 +17,7 @@ import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.adapter.MovieAdapter;
 import com.fyfirman.moviecatalogue.data.Movie;
 import com.fyfirman.moviecatalogue.database.MovieFavoriteHelper;
+import com.fyfirman.moviecatalogue.feature.widget.FavoriteWidgetProvider;
 
 public class DetailMovieActivity extends AppCompatActivity {
 
@@ -64,6 +65,7 @@ public class DetailMovieActivity extends AppCompatActivity {
       } else {
         addToFavorite();
       }
+      FavoriteWidgetProvider.updateWidget(this);
       isFavorite = !isFavorite;
       setFavorite();
     }
