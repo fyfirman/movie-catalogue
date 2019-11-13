@@ -39,6 +39,7 @@ public class TvShowViewModel extends ViewModel {
             JSONObject jsonObject = list.getJSONObject(i);
 
             Tv_Show tvShow = new Tv_Show();
+            tvShow.setId(jsonObject.getInt("id"));
             tvShow.setTitle(jsonObject.getString("name"));
             tvShow.setOverview(jsonObject.getString("overview"));
             tvShow.setPoster_path(jsonObject.getString("poster_path"));
