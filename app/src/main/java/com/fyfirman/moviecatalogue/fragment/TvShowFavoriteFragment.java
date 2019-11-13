@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import com.fyfirman.moviecatalogue.R;
-import com.fyfirman.moviecatalogue.activity.DetailMovieActivity;
+import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
 import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
 import com.fyfirman.moviecatalogue.database.TvShowFavoriteHelper;
@@ -87,10 +87,10 @@ public class TvShowFavoriteFragment extends Fragment {
   }
 
   private void showSelectedMovie(Tv_Show data) {
-    Intent showDetailMovie = new Intent(getActivity(), DetailMovieActivity.class);
+    Intent showDetailTvShow = new Intent(getActivity(), DetailTvShowActivity.class);
 
-    showDetailMovie.putExtra(DetailMovieActivity.EXTRA_MOVIE, data);
-    startActivity(showDetailMovie);
+    showDetailTvShow.putExtra(DetailTvShowActivity.EXTRA_TV_SHOW, data);
+    startActivity(showDetailTvShow);
   }
 
   private void showLoading(Boolean state) {

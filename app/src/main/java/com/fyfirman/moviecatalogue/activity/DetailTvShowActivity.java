@@ -14,12 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.fyfirman.moviecatalogue.R;
-import com.fyfirman.moviecatalogue.activity.DetailMovieActivity.LoadMovieData;
 import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
-import com.fyfirman.moviecatalogue.adapter.MovieAdapter;
-import com.fyfirman.moviecatalogue.data.Movie;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
-import com.fyfirman.moviecatalogue.database.MovieFavoriteHelper;
 import com.fyfirman.moviecatalogue.database.TvShowFavoriteHelper;
 
 public class DetailTvShowActivity extends AppCompatActivity {
@@ -74,8 +70,8 @@ public class DetailTvShowActivity extends AppCompatActivity {
     return super.onOptionsItemSelected(item);
   }
   public void getFavoriteState() {
-    Tv_Show movie = getIntent().getParcelableExtra(EXTRA_TV_SHOW);
-    listTvShowAdapter.setData(tvShowFavoriteHelper.selectTvShow(movie.getId().toString()));
+    Tv_Show tv_show = getIntent().getParcelableExtra(EXTRA_TV_SHOW);
+    listTvShowAdapter.setData(tvShowFavoriteHelper.selectTvShow(tv_show.getId().toString()));
     listTvShowAdapter.notifyDataSetChanged();
 
     if (listTvShowAdapter.getItemCount() > 0) {
@@ -105,8 +101,8 @@ public class DetailTvShowActivity extends AppCompatActivity {
 
   private void removeFromFavorite() {
     try {
-      Movie movie = getIntent().getParcelableExtra(EXTRA_TV_SHOW);
-      tvShowFavoriteHelper.deleteTvShow(movie.getId().toString());
+      Tv_Show tv_show = getIntent().getParcelableExtra(EXTRA_TV_SHOW);
+      tvShowFavoriteHelper.deleteTvShow(tv_show.getId().toString());
       Toast.makeText(this, getResources().getString(R.string.del_fav_success), Toast.LENGTH_SHORT)
           .show();
     } catch (SQLiteConstraintException e) {
