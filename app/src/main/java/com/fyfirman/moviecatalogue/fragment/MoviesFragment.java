@@ -55,6 +55,7 @@ public class MoviesFragment extends Fragment {
     btnSearchMovie.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
+        rvMovie.setVisibility(View.GONE);
         showLoading(true);
         String query = editTextSearch.getText().toString();
 
@@ -63,6 +64,8 @@ public class MoviesFragment extends Fragment {
         } else {
           movieViewModel.setData(getResources().getString(R.string.language));
         }
+
+        rvMovie.setVisibility(View.VISIBLE);
       }
     });
   }
