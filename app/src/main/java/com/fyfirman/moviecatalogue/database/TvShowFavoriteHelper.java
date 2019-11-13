@@ -1,43 +1,42 @@
 package com.fyfirman.moviecatalogue.database;
 
 import static com.fyfirman.moviecatalogue.database.TvShowFavoriteDatabaseContract.TvShowDatabaseColumns.id;
+import static com.fyfirman.moviecatalogue.database.TvShowFavoriteDatabaseContract.TvShowDatabaseColumns.name;
 import static com.fyfirman.moviecatalogue.database.TvShowFavoriteDatabaseContract.TvShowDatabaseColumns.overview;
 import static com.fyfirman.moviecatalogue.database.TvShowFavoriteDatabaseContract.TvShowDatabaseColumns.poster_path;
 import static com.fyfirman.moviecatalogue.database.TvShowFavoriteDatabaseContract.TvShowDatabaseColumns.table_name;
-import static com.fyfirman.moviecatalogue.database.TvShowFavoriteDatabaseContract.TvShowDatabaseColumns.name;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.fyfirman.moviecatalogue.data.Movie;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
 import java.util.ArrayList;
 
 public class TvShowFavoriteHelper {
   private static final String DATABASE_TABLE = table_name;
-  private static MovieFavoriteDatabaseHelper movieDatabaseHelper;
-  private static TvShowFavoriteHelper movieFavoriteHelper;
+  private static TvShowFavoriteDatabaseHelper tvShowFavoriteDatabaseHelper;
+  private static TvShowFavoriteHelper tvShowFavoriteHelper;
   private static SQLiteDatabase sqLiteDatabase;
 
   private TvShowFavoriteHelper(Context context) {
-    movieDatabaseHelper = new MovieFavoriteDatabaseHelper(context);
+    tvShowFavoriteDatabaseHelper = new TvShowFavoriteDatabaseHelper(context);
   }
 
   public static TvShowFavoriteHelper getInstance(Context context) {
-    if (movieFavoriteHelper == null) {
+    if (tvShowFavoriteHelper == null) {
       synchronized (SQLiteOpenHelper.class) {
-        if (movieFavoriteHelper == null) {
-          movieFavoriteHelper = new TvShowFavoriteHelper(context);
+        if (tvShowFavoriteHelper == null) {
+          tvShowFavoriteHelper = new TvShowFavoriteHelper(context);
         }
       }
     }
-    return movieFavoriteHelper;
+    return tvShowFavoriteHelper;
   }
 
   public void close() {
-    movieDatabaseHelper.close();
+    tvShowFavoriteDatabaseHelper.close();
 
     if (sqLiteDatabase.isOpen())
       sqLiteDatabase.close();
@@ -46,7 +45,7 @@ public class TvShowFavoriteHelper {
   public ArrayList<Tv_Show> selectTvShow() {
     ArrayList<Tv_Show> arrayList = new ArrayList<>();
 
-    sqLiteDatabase = movieDatabaseHelper.getReadableDatabase();
+    sqLiteDatabase = tvShowFavoriteDatabaseHelper.getReadableDatabase();
 
     Cursor cursor = sqLiteDatabase.query(DATABASE_TABLE,
         null,
@@ -78,13 +77,13 @@ public class TvShowFavoriteHelper {
     return arrayList;
   }
 
-  public ArrayList<Tv_Show> selectTvShow(String movie_id) {
+  public ArrayList<Tv_Show> selectTvShow(String tv_show_id) {
     ArrayList<Tv_Show> arrayList = new ArrayList<>();
 
-    sqLiteDatabase = movieDatabaseHelper.getReadableDatabase();
+    sqLiteDatabase = tvShowFavoriteDatabaseHelper.getReadableDatabase();
 
     String selection = id + " = ?";
-    String[] selectionArgs = {movie_id};
+    String[] selectionArgs = {tv_show_id};
 
     Cursor cursor = sqLiteDatabase.query(DATABASE_TABLE, null,
         selection,
@@ -116,7 +115,7 @@ public class TvShowFavoriteHelper {
   }
 
   public void insertTvShow(Tv_Show tv_show) {
-    sqLiteDatabase = movieDatabaseHelper.getWritableDatabase();
+    sqLiteDatabase = tvShowFavoriteDatabaseHelper.getWritableDatabase();
 
     ContentValues args = new ContentValues();
     args.put(id, tv_show.getId());
@@ -127,7 +126,7 @@ public class TvShowFavoriteHelper {
   }
 
   public void deleteTvShow(String tv_show_id) {
-    sqLiteDatabase = movieDatabaseHelper.getWritableDatabase();
+    sqLiteDatabase = tvShowFavoriteDatabaseHelper.getWritableDatabase();
     sqLiteDatabase.delete(table_name, id + " = '" + tv_show_id + "'", null);
   }
 }

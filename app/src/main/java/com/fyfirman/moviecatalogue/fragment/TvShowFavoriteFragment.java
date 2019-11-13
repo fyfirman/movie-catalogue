@@ -15,9 +15,8 @@ import android.widget.ProgressBar;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.activity.DetailMovieActivity;
 import com.fyfirman.moviecatalogue.adapter.ListTvShowAdapter;
-import com.fyfirman.moviecatalogue.adapter.MovieAdapter;
 import com.fyfirman.moviecatalogue.data.Tv_Show;
-import com.fyfirman.moviecatalogue.database.MovieFavoriteHelper;
+import com.fyfirman.moviecatalogue.database.TvShowFavoriteHelper;
 import java.util.ArrayList;
 
 public class TvShowFavoriteFragment extends Fragment {
@@ -47,7 +46,7 @@ public class TvShowFavoriteFragment extends Fragment {
 
     showRecyclerList(view);
 
-    movieFavoriteHelper = MovieFavoriteHelper.getInstance(getContext());
+    tvShowFavoriteHelper = TvShowFavoriteHelper.getInstance(getContext());
 
     if (savedInstanceState == null) {
       new LoadTvShowFavoriteData().execute();

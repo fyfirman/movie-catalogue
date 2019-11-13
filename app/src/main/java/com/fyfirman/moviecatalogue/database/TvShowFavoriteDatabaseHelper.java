@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class TvShowFavoriteDatabaseHelper extends SQLiteOpenHelper {
 
-  private static final String DATABASE_NAME = "moviefav.db";
+  private static final String DATABASE_NAME = "tvshowfav.db";
 
   private static final int DATABASE_VERSION = 1;
 

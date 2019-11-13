@@ -40,7 +40,6 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
   public void setData(ArrayList<Tv_Show> items) {
     listTvShow.clear();
     listTvShow.addAll(items);
-    notifyDataSetChanged();
   }
 
   @NonNull
