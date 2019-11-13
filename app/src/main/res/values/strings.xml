@@ -13,4 +13,5 @@
   <string name="del_fav_success">Item deleted successfully</string>
   <string name="explore">Explore</string>
   <string name="favorite">Favorite</string>
+  <string name="connection_error">Connection Error</string>
 </resources>

@@ -14,4 +14,5 @@
   <string name="del_fav_success">Item berhasil dihapus</string>
   <string name="explore">Jelajahi</string>
   <string name="favorite">Favorit</string>
+  <string name="connection_error">Koneksi error</string>
 </resources>
