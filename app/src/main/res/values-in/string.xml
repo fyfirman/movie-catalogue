@@ -15,4 +15,8 @@
   <string name="explore">Jelajahi</string>
   <string name="favorite">Favorit</string>
   <string name="connection_error">Koneksi error</string>
+  <string name="search_hint_movie">Cari film</string>
+  <string name="button_search_movie">Tombol cari film</string>
+  <string name="search_hint_tv_show">Cari TV Show</string>
+  <string name="button_search_tv_show">Tombol cari TV Show</string>
 </resources>

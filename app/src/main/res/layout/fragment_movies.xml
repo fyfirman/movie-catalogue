@@ -30,7 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_weight="2"
-        android:hint="string/search_hint_movie"
+        android:hint="@string/search_hint_movie"
         android:maxLines="1"
         android:paddingStart="10dp"
         android:paddingEnd="10dp" />
@@ -41,7 +41,7 @@
         android:layout_height="40dp"
         android:layout_weight="0.4"
         android:background="@color/colorPrimary"
-        android:contentDescription="string/button_search_movie"
+        android:contentDescription="@string/button_search_movie"
         android:src="@drawable/ic_search_black_24dp" />
 
     </LinearLayout>

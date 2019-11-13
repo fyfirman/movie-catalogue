@@ -14,4 +14,8 @@
   <string name="explore">Explore</string>
   <string name="favorite">Favorite</string>
   <string name="connection_error">Connection Error</string>
+  <string name="search_hint_movie">Search movies</string>
+  <string name="button_search_movie">Search movies button</string>
+  <string name="search_hint_tv_show">Search TV Show</string>
+  <string name="button_search_tv_show">Search TV Show button</string>
 </resources>
