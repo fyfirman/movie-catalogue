@@ -19,6 +19,10 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Li
   private ArrayList<Tv_Show> listTvShow;
   private Context context;
 
+  public ListTvShowAdapter(Context context) {
+    this.context = context;
+    this.listTvShow = new ArrayList<>();
+  }
   public ListTvShowAdapter(Context context, ArrayList<Tv_Show> list) {
     this.context = context;
     this.listTvShow = list;
