@@ -11,4 +11,6 @@
   <string name="change_language_settings">Change Language Settings</string>
   <string name="add_fav_success">Item added successfully</string>
   <string name="del_fav_success">Item deleted successfully</string>
+  <string name="explore">Explore</string>
+  <string name="favorite">Favorite</string>
 </resources>

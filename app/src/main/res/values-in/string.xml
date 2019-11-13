@@ -12,4 +12,6 @@
   <string name="change_language_settings">Ubah bahasa</string>
   <string name="add_fav_success">Item berhasil ditambahkan</string>
   <string name="del_fav_success">Item berhasil dihapus</string>
+  <string name="explore">Jelajahi</string>
+  <string name="favorite">Favorit</string>
 </resources>
