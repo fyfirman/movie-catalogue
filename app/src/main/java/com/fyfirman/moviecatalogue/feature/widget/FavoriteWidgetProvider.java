@@ -13,8 +13,8 @@ import com.fyfirman.moviecatalogue.R;
 
 public class FavoriteWidgetProvider extends AppWidgetProvider {
 
-  private static final String TOAST_ACTION = "id.co.hasaneljabir.moviereview.TOAST_ACTION";
-  public static final String EXTRA_ITEM = "com.dicoding.picodiploma.EXTRA_ITEM";
+  private static final String TOAST_ACTION = "";
+  public static final String EXTRA_ITEM = "";
 
   static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
     Intent intent = new Intent(context, StackWidgetService.class);
