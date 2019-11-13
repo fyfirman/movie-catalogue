@@ -11,7 +11,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.activity.DetailTvShowActivity;
@@ -43,9 +46,26 @@ public class TvShowFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
 
     progressBar = getView().findViewById(R.id.indeterminateBar);
+    final EditText editTextSearch = getView().findViewById(R.id.et_search_tv_show);
+    ImageButton btnSearchTvShow = getView().findViewById(R.id.btn_search_tv_show);
+
     showLoading(true);
 
     showRecyclerList(view);
+
+    btnSearchTvShow.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        showLoading(true);
+        String query = editTextSearch.getText().toString();
+
+        if (query.length() > 0) {
+          tvShowViewModel.searchMovie(query);
+        } else {
+          tvShowViewModel.setData(getResources().getString(R.string.language));
+        }
+      }
+    });
 
   }
 
