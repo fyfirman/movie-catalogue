@@ -11,7 +11,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.activity.DetailMovieActivity;
@@ -42,10 +45,26 @@ public class MoviesFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
 
     progressBar = getView().findViewById(R.id.indeterminateBar);
+    final EditText editTextSearch = getView().findViewById(R.id.et_search_movie);
+    ImageButton btnSearchMovie = getView().findViewById(R.id.btn_search_movie);
+
     showLoading(true);
 
     showRecyclerList(view);
 
+    btnSearchMovie.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        showLoading(true);
+        String query = editTextSearch.getText().toString();
+
+        if (query.length() > 0) {
+          movieViewModel.searchMovie(query);
+        } else {
+          movieViewModel.setData(getResources().getString(R.string.language));
+        }
+      }
+    });
   }
 
   private void showRecyclerList(View view) {
