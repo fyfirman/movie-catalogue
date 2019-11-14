@@ -21,4 +21,16 @@
   <string name="button_search_tv_show">Tombol cari TV Show</string>
   <string name="appwidget_text">Film Favorit</string>
   <string name="empty_text">Tidak ada film favorit</string>
+
+  <!-- Reminder -->
+  <string name="reminder">Konfigurasi Pengingat</string>
+  <string name="daily_enabled">Pengingat harian diaktifkan</string>
+  <string name="daily_disabled">Pengingat harian dimatikan</string>
+  <string name="new_release_enabled">Pengingat rilisan baru diaktifkan</string>
+  <string name="new_release_disabled">Pengingat rilisan baru dimatikan</string>
+  <string name="title_daily_reminder">Pengingat harian</string>
+  <string name="desc_daily_reminder">Ingatkan saya jam 07.00 untuk membuka aplikasi</string>
+  <string name="title_new_release_reminder">Pengingat rilisan baru</string>
+  <string name="desc_new_release_reminder">Dapatkan pemberitahuan tentang film yang rilis hari ini</string>
+  <string name="reminder_setting">Konfigurasi Pengingat</string>
 </resources>

@@ -21,4 +21,16 @@
   <string name="button_search_tv_show">Search TV Show button</string>
   <string name="appwidget_text">Favorite Movies</string>
   <string name="empty_text">Empty favorite movie</string>
+
+  <!-- Reminder -->
+  <string name="reminder">Configure Reminder</string>
+  <string name="daily_enabled">Daily notification enabled</string>
+  <string name="daily_disabled">Daily notification disabled</string>
+  <string name="new_release_enabled">New release notification enabled</string>
+  <string name="new_release_disabled">New release notification disabled</string>
+  <string name="title_daily_reminder">Daily notification</string>
+  <string name="desc_daily_reminder">Remind me on 07.00 to open application </string>
+  <string name="title_new_release_reminder">New Release Notification</string>
+  <string name="desc_new_release_reminder">Get notifications about what films are released today</string>
+  <string name="reminder_setting">Configure Reminder</string>
 </resources>
