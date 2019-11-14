@@ -45,7 +45,7 @@ public class ConsumerAdapter extends RecyclerView.Adapter<ConsumerAdapter.Favori
         holder.tvTitle.setText(getListFavoriteMovie().get(i).getTitle());
         holder.tvSynopsis.setText(getListFavoriteMovie().get(i).getOverview());
         Glide.with(holder.itemView.getContext())
-                .load("https://image.tmdb.org/t/p/w185" + getListFavoriteMovie().get(i).getPosterPath())
+                .load(getListFavoriteMovie().get(i).getPosterPath())
                 .apply(new RequestOptions().override(350, 550))
                 .into(holder.ivPoster);
     }
@@ -61,9 +61,9 @@ public class ConsumerAdapter extends RecyclerView.Adapter<ConsumerAdapter.Favori
 
         public FavoriteMovieViewHolder(View itemView) {
             super(itemView);
-            tvTitle = itemView.findViewById(R.id.tv_title);
-            tvSynopsis = itemView.findViewById(R.id.tv_synopsis);
-            ivPoster = itemView.findViewById(R.id.iv_poster);
+            tvTitle = itemView.findViewById(R.id.movie_title);
+            tvSynopsis = itemView.findViewById(R.id.movie_synopsis);
+            ivPoster = itemView.findViewById(R.id.img_photo);
         }
     }
 }
