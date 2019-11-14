@@ -19,11 +19,10 @@ public class ReminderActivity extends AppCompatActivity implements View.OnClickL
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_reminder);
-    setTitle("R.string.reminder");
+    setTitle(R.string.reminder);
 
     reminderReceiver = new ReminderReceiver();
 
-//TODO: Remove hardcoded string
     switchDaily = findViewById(R.id.switch_daily);
     switchNewRelease = findViewById(R.id.switch_new_release);
 
@@ -37,10 +36,10 @@ public class ReminderActivity extends AppCompatActivity implements View.OnClickL
     switch (v.getId()) {
       case R.id.switch_daily:
         if (switchDaily.isChecked()) {
-          Toast.makeText(this, "getString(R.string.daily_enabled)", Toast.LENGTH_SHORT).show();
+          Toast.makeText(this, getString(R.string.daily_enabled), Toast.LENGTH_SHORT).show();
           reminderReceiver.setDailyReminder(this, "07:00","Go Check Movie Review App Today!");
         } else {
-          Toast.makeText(this, "getString(R.string.daily_disabled)", Toast.LENGTH_SHORT).show();
+          Toast.makeText(this, getString(R.string.daily_disabled), Toast.LENGTH_SHORT).show();
           reminderReceiver.cancelDailyReminder(this);
         }
         break;
@@ -48,10 +47,10 @@ public class ReminderActivity extends AppCompatActivity implements View.OnClickL
         if (switchNewRelease.isChecked()) {
           String newReleaseMovie = ReminderReceiver.EXTRA_MESSAGE;
           log.d("newReleaseMovie", newReleaseMovie);
-          Toast.makeText(this, "getString(R.string.new_release_enabled)", Toast.LENGTH_SHORT).show();
+          Toast.makeText(this, getString(R.string.new_release_enabled), Toast.LENGTH_SHORT).show();
           reminderReceiver.setNewReleaseReminder(this, "08:00",newReleaseMovie);
         } else {
-          Toast.makeText(this, "getString(R.string.new_release_disabled)", Toast.LENGTH_SHORT).show();
+          Toast.makeText(this, getString(R.string.new_release_disabled), Toast.LENGTH_SHORT).show();
           reminderReceiver.cancelNewReleaseReminder(this);
         }
         break;
