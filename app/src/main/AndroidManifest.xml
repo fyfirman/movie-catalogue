@@ -31,7 +31,6 @@
         android:resource="@xml/favorite_widget_info" />
     </receiver>
 
-    <!-- TODO: Fix name-->
     <receiver
       android:name=".feature.reminder.ReminderReceiver"
       android:enabled="true"
