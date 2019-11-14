@@ -33,4 +33,6 @@
   <string name="title_new_release_reminder">Pengingat rilisan baru</string>
   <string name="desc_new_release_reminder">Dapatkan pemberitahuan tentang film yang rilis hari ini</string>
   <string name="reminder_setting">Konfigurasi Pengingat</string>
+
+  <string name="new_released_movie">Film baru telah dirilis!</string>
 </resources>

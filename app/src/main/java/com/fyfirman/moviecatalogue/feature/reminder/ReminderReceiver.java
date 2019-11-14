@@ -43,7 +43,7 @@ public class ReminderReceiver extends BroadcastReceiver {
     if (message.equalsIgnoreCase("EXTRA_MESSAGE")) {
       getNewRelease(context);
     } else { //Daily reminder
-      title = "Movie Review";
+      title = context.getResources().getString(R.string.app_name);
       showReminderNotification(context, title, message);
     }
   }
@@ -144,33 +144,6 @@ public class ReminderReceiver extends BroadcastReceiver {
           AlarmManager.INTERVAL_DAY, pendingIntent);
     }
   }
-//  public void setNewReleaseReminder(Context context, String time, String message) {
-//    Log.d("New Release Reminder", "Opened");
-//    String TIME_FORMAT = "HH:mm";
-//
-//    if (isDateInvalid(time, TIME_FORMAT)) {
-//      return;
-//    }
-//
-//    AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-//    Intent intent = new Intent(context, ReminderReceiver.class);
-//    intent.putExtra(EXTRA_MESSAGE, message);
-//
-//    String[] timeArray = time.split(":");
-//
-//    Calendar calendar = Calendar.getInstance();
-//    calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(timeArray[0]));
-//    calendar.set(Calendar.MINUTE, Integer.parseInt(timeArray[1]));
-//    calendar.set(Calendar.SECOND, 0);
-//
-//    PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 102, intent, 0);
-//
-//    if (alarmManager != null) {
-//      alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-//          AlarmManager.INTERVAL_DAY, pendingIntent);
-//      Log.d("New Release Reminder", "Setted");
-//    }
-//  }
 
   public void cancelDailyReminder(Context context) {
     AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -211,7 +184,7 @@ public class ReminderReceiver extends BroadcastReceiver {
           JSONObject responseObject = new JSONObject(result);
           JSONArray list = responseObject.getJSONArray("results");
 
-          title = "New Released Movie";
+          title = context.getResources().getString(R.string.new_released_movie);
           message = "";
 
           for (int i = 0; i < list.length(); i++) {

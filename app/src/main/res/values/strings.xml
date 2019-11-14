@@ -32,4 +32,6 @@
   <string name="title_new_release_reminder">New Release Notification</string>
   <string name="desc_new_release_reminder">Get notifications about what films are released today</string>
   <string name="reminder_setting">Configure Reminder</string>
+
+  <string name="new_released_movie">New Movie Released!</string>
 </resources>
