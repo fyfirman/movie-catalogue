@@ -1,5 +1,8 @@
 package com.fyfirman.consumerapp;
 
+import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.CONTENT_URI;
+import static com.fyfirman.consumerapp.MappingHelper.mapCursorToArrayList;
+
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
@@ -11,12 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.FavoriteMovieColumns.CONTENT_URI;
-import static id.co.hasaneljabir.favoritemovie.MappingHelper.mapCursorToArrayList;
 
 public class FavoriteMovieActivity extends AppCompatActivity implements LoadFavoriteMovieCallback {
 

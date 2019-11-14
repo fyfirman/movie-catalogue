@@ -1,15 +1,14 @@
 package com.fyfirman.consumerapp;
 
-import android.database.Cursor;
-
-import java.util.ArrayList;
-
 import static android.provider.BaseColumns._ID;
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.FavoriteMovieColumns.OVERVIEW;
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.FavoriteMovieColumns.POSTER_PATH;
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.FavoriteMovieColumns.RELEASE_DATE;
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.FavoriteMovieColumns.TITLE;
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE;
+import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.OVERVIEW;
+import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.POSTER_PATH;
+import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.RELEASE_DATE;
+import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.TITLE;
+import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE;
+
+import android.database.Cursor;
+import java.util.ArrayList;
 
 public class MappingHelper {
 

@@ -1,12 +1,12 @@
 package com.fyfirman.consumerapp;
 
+import static android.provider.BaseColumns._ID;
+import static com.fyfirman.consumerapp.DatabaseContract.getColumnInt;
+import static com.fyfirman.consumerapp.DatabaseContract.getColumnString;
+
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import static android.provider.BaseColumns._ID;
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.getColumnInt;
-import static id.co.hasaneljabir.favoritemovie.DatabaseContract.getColumnString;
 
 public class FavoriteMovieItem implements Parcelable {
     private int id;
