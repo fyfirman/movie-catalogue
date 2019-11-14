@@ -3,10 +3,8 @@ package com.fyfirman.moviecatalogue.contentProvider;
 import static android.provider.BaseColumns._ID;
 import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.OVERVIEW;
 import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.POSTER_PATH;
-import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.RELEASE_DATE;
 import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.TABLE_NAME;
 import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.TITLE;
-import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -68,8 +66,6 @@ public class FavoriteMovieHelper {
                 favoriteMovie = new FavoriteMovie();
                 favoriteMovie.setId(cursor.getInt(cursor.getColumnIndexOrThrow(_ID)));
                 favoriteMovie.setTitle(cursor.getString(cursor.getColumnIndexOrThrow(TITLE)));
-                favoriteMovie.setReleaseDate(cursor.getString(cursor.getColumnIndexOrThrow(RELEASE_DATE)));
-                favoriteMovie.setVoteAverage(cursor.getString(cursor.getColumnIndexOrThrow(VOTE_AVERAGE)));
                 favoriteMovie.setOverview(cursor.getString(cursor.getColumnIndexOrThrow(OVERVIEW)));
                 favoriteMovie.setPosterPath(cursor.getString(cursor.getColumnIndexOrThrow(POSTER_PATH)));
 
@@ -85,8 +81,6 @@ public class FavoriteMovieHelper {
     public long insert(FavoriteMovie favoriteMovie) {
         ContentValues initialValues = new ContentValues();
         initialValues.put(TITLE, favoriteMovie.getTitle());
-        initialValues.put(RELEASE_DATE, favoriteMovie.getReleaseDate());
-        initialValues.put(VOTE_AVERAGE, favoriteMovie.getVoteAverage());
         initialValues.put(OVERVIEW, favoriteMovie.getOverview());
         initialValues.put(POSTER_PATH, favoriteMovie.getPosterPath());
         return database.insert(DATABASE_TABLE, null, initialValues);
@@ -95,8 +89,6 @@ public class FavoriteMovieHelper {
     public int update(FavoriteMovie favoriteMovie) {
         ContentValues args = new ContentValues();
         args.put(TITLE, favoriteMovie.getTitle());
-        args.put(RELEASE_DATE, favoriteMovie.getReleaseDate());
-        args.put(VOTE_AVERAGE, favoriteMovie.getVoteAverage());
         args.put(OVERVIEW, favoriteMovie.getOverview());
         args.put(POSTER_PATH, favoriteMovie.getPosterPath());
         return database.update(DATABASE_TABLE, args, _ID + "= '" + favoriteMovie.getId() + "'", null);

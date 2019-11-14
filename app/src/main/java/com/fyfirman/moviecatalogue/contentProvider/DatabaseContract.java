@@ -16,8 +16,6 @@ public final class DatabaseContract {
         public static final String TABLE_NAME = "favorite_movie";
         public static final String _ID = "_id";
         public static final String TITLE = "title";
-        public static final String RELEASE_DATE = "release_date";
-        public static final String VOTE_AVERAGE = "vote_average";
         public static final String OVERVIEW = "overview";
         public static final String POSTER_PATH = "poster_path";
 

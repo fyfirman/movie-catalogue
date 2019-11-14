@@ -1,18 +1,16 @@
 package com.fyfirman.moviecatalogue.contentProvider;
 
-import android.database.Cursor;
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import static android.provider.BaseColumns._ID;
 import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.getColumnInt;
 import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.getColumnString;
 
+import android.database.Cursor;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class FavoriteMovie implements Parcelable {
     private int id;
     private String title;
-    private String releaseDate;
-    private String voteAverage;
     private String overview;
     private String posterPath;
 
@@ -30,22 +28,6 @@ public class FavoriteMovie implements Parcelable {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    public String getVoteAverage() {
-        return voteAverage;
-    }
-
-    public void setVoteAverage(String voteAverage) {
-        this.voteAverage = voteAverage;
     }
 
     public String getOverview() {
@@ -73,8 +55,6 @@ public class FavoriteMovie implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.id);
         dest.writeString(this.title);
-        dest.writeString(this.releaseDate);
-        dest.writeString(this.voteAverage);
         dest.writeString(this.overview);
         dest.writeString(this.posterPath);
     }
@@ -87,8 +67,6 @@ public class FavoriteMovie implements Parcelable {
                          String overview, String posterPath) {
         this.id = id;
         this.title = title;
-        this.releaseDate = releaseDate;
-        this.voteAverage = voteAverage;
         this.overview = overview;
         this.posterPath = posterPath;
     }
@@ -96,8 +74,6 @@ public class FavoriteMovie implements Parcelable {
     public FavoriteMovie(Cursor cursor) {
         this.id = getColumnInt(cursor, _ID);
         this.title = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.TITLE);
-        this.releaseDate = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.RELEASE_DATE);
-        this.voteAverage = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE);
         this.overview = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.OVERVIEW);
         this.posterPath = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.POSTER_PATH);
     }
@@ -105,8 +81,6 @@ public class FavoriteMovie implements Parcelable {
     private FavoriteMovie(Parcel in) {
         this.id = in.readInt();
         this.title = in.readString();
-        this.releaseDate = in.readString();
-        this.voteAverage = in.readString();
         this.overview = in.readString();
         this.posterPath = in.readString();
     }

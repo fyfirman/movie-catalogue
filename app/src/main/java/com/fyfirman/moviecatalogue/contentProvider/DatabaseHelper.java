@@ -14,14 +14,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + " (%s INTEGER PRIMARY KEY NOT NULL," +
                     " %s TEXT NOT NULL," +
                     " %s TEXT NOT NULL," +
-                    " %s TEXT NOT NULL," +
-                    " %s TEXT NOT NULL," +
                     " %s TEXT NOT NULL)",
             DatabaseContract.FavoriteMovieColumns.TABLE_NAME,
             DatabaseContract.FavoriteMovieColumns._ID,
             DatabaseContract.FavoriteMovieColumns.TITLE,
-            DatabaseContract.FavoriteMovieColumns.RELEASE_DATE,
-            DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE,
             DatabaseContract.FavoriteMovieColumns.OVERVIEW,
             DatabaseContract.FavoriteMovieColumns.POSTER_PATH
     );
