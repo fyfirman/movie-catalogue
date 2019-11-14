@@ -14,9 +14,6 @@ import android.view.MenuItem;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.fragment.ExploreFragment;
 import com.fyfirman.moviecatalogue.fragment.FavoriteFragment;
-import com.fyfirman.moviecatalogue.fragment.MoviesFavoriteFragment;
-import com.fyfirman.moviecatalogue.fragment.MoviesFragment;
-import com.fyfirman.moviecatalogue.fragment.TvShowFragment;
 
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
@@ -73,9 +70,14 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == R.id.action_change_settings) {
-      Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-      startActivity(mIntent);
+    switch (item.getItemId()){
+      case R.id.action_change_settings:
+        Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+        startActivity(mIntent);
+      case R.id.action_reminder_setting:
+        Intent reminder = new Intent(this, ReminderActivity.class);
+        startActivity(reminder);
+        break;
     }
     return super.onOptionsItemSelected(item);
   }
