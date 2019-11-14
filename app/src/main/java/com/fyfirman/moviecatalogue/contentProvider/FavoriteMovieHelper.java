@@ -1,21 +1,20 @@
 package com.fyfirman.moviecatalogue.contentProvider;
 
+import static android.provider.BaseColumns._ID;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.OVERVIEW;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.POSTER_PATH;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.RELEASE_DATE;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.TABLE_NAME;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.TITLE;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
-
-import static android.provider.BaseColumns._ID;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.OVERVIEW;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.POSTER_PATH;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.RELEASE_DATE;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.TABLE_NAME;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.TITLE;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE;
 
 
 public class FavoriteMovieHelper {

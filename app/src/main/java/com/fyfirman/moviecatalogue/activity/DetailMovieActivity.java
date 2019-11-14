@@ -1,6 +1,14 @@
 package com.fyfirman.moviecatalogue.activity;
 
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.CONTENT_URI;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.OVERVIEW;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.POSTER_PATH;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.TITLE;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns._ID;
+
+import android.content.ContentValues;
 import android.database.sqlite.SQLiteConstraintException;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -59,10 +67,25 @@ public class DetailMovieActivity extends AppCompatActivity {
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
+    Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
+
+    ContentValues values = new ContentValues();
+    values.put(_ID, movie.getId());
+    values.put(TITLE, movie.getTitle());
+    values.put(OVERVIEW, movie.getOverview());
+    values.put(POSTER_PATH, movie.getPoster_path());
+
+
     if (item.getItemId() == R.id.add_to_favorite) {
       if (isFavorite) {
+
+        Uri uri = Uri.parse(CONTENT_URI + "/" + movie.getId());
+        getContentResolver().delete(uri, null, null);
+
         removeFromFavorite();
       } else {
+        getContentResolver().insert(CONTENT_URI, values);
+
         addToFavorite();
       }
       FavoriteWidgetProvider.updateWidget(this);

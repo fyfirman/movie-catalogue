@@ -35,7 +35,12 @@
       android:name=".feature.reminder.ReminderReceiver"
       android:enabled="true"
       android:exported="true" />
-
+    <provider
+      android:name=".contentProvider.FavoriteMovieProvider"
+      android:authorities="com.fyfirman.moviecatalogue"
+      android:exported="true"
+      android:readPermission="com.fyfirman.moviecatalogue.READ_DATABASE"
+      android:writePermission="com.fyfirman.moviecatalogue.WRITE_DATABASE" />
     <activity android:name=".activity.DetailMovieActivity" />
     <activity android:name=".activity.DetailTvShowActivity" />
     <activity

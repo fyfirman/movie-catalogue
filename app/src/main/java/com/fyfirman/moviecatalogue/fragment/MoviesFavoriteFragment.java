@@ -1,8 +1,14 @@
 package com.fyfirman.moviecatalogue.fragment;
 
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.CONTENT_URI;
+
+import android.content.Context;
 import android.content.Intent;
+import android.database.ContentObserver;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,8 +21,10 @@ import android.widget.ProgressBar;
 import com.fyfirman.moviecatalogue.R;
 import com.fyfirman.moviecatalogue.activity.DetailMovieActivity;
 import com.fyfirman.moviecatalogue.adapter.MovieAdapter;
+import com.fyfirman.moviecatalogue.contentProvider.LoadFavoriteMovieCallback;
 import com.fyfirman.moviecatalogue.data.Movie;
 import com.fyfirman.moviecatalogue.database.MovieFavoriteHelper;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class MoviesFavoriteFragment extends Fragment {
@@ -100,6 +108,46 @@ public class MoviesFavoriteFragment extends Fragment {
       progressBar.setVisibility(View.GONE);
     }
   }
+
+  public static class DataObserver extends ContentObserver {
+
+    final Context context;
+
+    public DataObserver(Handler handler, Context context) {
+      super(handler);
+      this.context = context;
+    }
+
+    @Override
+    public void onChange(boolean selfChange) {
+      super.onChange(selfChange);
+      new LoadFavoriteMovieAsync(context, (LoadFavoriteMovieCallback) context).execute();
+    }
+  }
+
+  private static class LoadFavoriteMovieAsync extends AsyncTask<Void, Void, Cursor> {
+
+    private final WeakReference<Context> weakContext;
+
+    private LoadFavoriteMovieAsync(Context context, LoadFavoriteMovieCallback callback) {
+      weakContext = new WeakReference<>(context);
+    }
+
+    @Override
+    protected void onPreExecute() {
+    }
+
+    @Override
+    protected Cursor doInBackground(Void... voids) {
+      Context context = weakContext.get();
+      return context.getContentResolver().query(CONTENT_URI, null, null, null, null);
+    }
+
+    @Override
+    protected void onPostExecute(Cursor favoriteMovies) {
+    }
+  }
+
 
   public class LoadMovieFavoriteData extends AsyncTask<Void, Void, Void> {
     @Override

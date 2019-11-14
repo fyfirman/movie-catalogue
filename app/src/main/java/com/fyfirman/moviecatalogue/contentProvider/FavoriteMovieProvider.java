@@ -1,5 +1,9 @@
 package com.fyfirman.moviecatalogue.contentProvider;
 
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.AUTHORITY;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.CONTENT_URI;
+import static com.fyfirman.moviecatalogue.contentProvider.DatabaseContract.FavoriteMovieColumns.TABLE_NAME;
+
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
@@ -7,12 +11,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-
-import id.co.hasaneljabir.moviereview.feature.movie.MovieFavActivity;
-
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.AUTHORITY;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.CONTENT_URI;
-import static id.co.hasaneljabir.moviereview.entity.contentProvider.DatabaseContract.FavoriteMovieColumns.TABLE_NAME;
+import com.fyfirman.moviecatalogue.fragment.MoviesFavoriteFragment;
 
 public class FavoriteMovieProvider extends ContentProvider {
     private static final int NOTE = 1;
@@ -67,7 +66,7 @@ public class FavoriteMovieProvider extends ContentProvider {
                 added = 0;
                 break;
         }
-        getContext().getContentResolver().notifyChange(CONTENT_URI, new MovieFavActivity.DataObserver(new Handler(), getContext()));
+        getContext().getContentResolver().notifyChange(CONTENT_URI, new MoviesFavoriteFragment.DataObserver(new Handler(), getContext()));
         return Uri.parse(CONTENT_URI + "/" + added);
     }
 
@@ -84,7 +83,7 @@ public class FavoriteMovieProvider extends ContentProvider {
                 updated = 0;
                 break;
         }
-        getContext().getContentResolver().notifyChange(CONTENT_URI, new MovieFavActivity.DataObserver(new Handler(), getContext()));
+        getContext().getContentResolver().notifyChange(CONTENT_URI, new MoviesFavoriteFragment.DataObserver(new Handler(), getContext()));
         return updated;
     }
 
@@ -100,7 +99,7 @@ public class FavoriteMovieProvider extends ContentProvider {
                 deleted = 0;
                 break;
         }
-        getContext().getContentResolver().notifyChange(CONTENT_URI, new MovieFavActivity.DataObserver(new Handler(), getContext()));
+        getContext().getContentResolver().notifyChange(CONTENT_URI, new MoviesFavoriteFragment.DataObserver(new Handler(), getContext()));
         return deleted;
     }
 }
