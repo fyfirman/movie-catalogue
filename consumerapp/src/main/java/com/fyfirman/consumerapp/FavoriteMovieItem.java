@@ -11,8 +11,6 @@ import android.os.Parcelable;
 public class FavoriteMovieItem implements Parcelable {
     private int id;
     private String title;
-    private String releaseDate;
-    private String voteAverage;
     private String overview;
     private String posterPath;
 
@@ -32,21 +30,6 @@ public class FavoriteMovieItem implements Parcelable {
         this.title = title;
     }
 
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    public String getVoteAverage() {
-        return voteAverage;
-    }
-
-    public void setVoteAverage(String voteAverage) {
-        this.voteAverage = voteAverage;
-    }
 
     public String getOverview() {
         return overview;
@@ -73,17 +56,13 @@ public class FavoriteMovieItem implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.id);
         dest.writeString(this.title);
-        dest.writeString(this.releaseDate);
-        dest.writeString(this.voteAverage);
         dest.writeString(this.overview);
         dest.writeString(this.posterPath);
     }
 
-    public FavoriteMovieItem(int id, String title, String releaseDate, String voteAverage, String overview, String posterPath) {
+    public FavoriteMovieItem(int id, String title, String overview, String posterPath) {
         this.id = id;
         this.title = title;
-        this.releaseDate = releaseDate;
-        this.voteAverage = voteAverage;
         this.overview = overview;
         this.posterPath = posterPath;
     }
@@ -91,8 +70,6 @@ public class FavoriteMovieItem implements Parcelable {
     public FavoriteMovieItem(Cursor cursor) {
         this.id = getColumnInt(cursor, _ID);
         this.title = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.TITLE);
-        this.releaseDate = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.RELEASE_DATE);
-        this.voteAverage = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE);
         this.overview = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.OVERVIEW);
         this.posterPath = getColumnString(cursor, DatabaseContract.FavoriteMovieColumns.POSTER_PATH);
     }
@@ -100,8 +77,6 @@ public class FavoriteMovieItem implements Parcelable {
     private FavoriteMovieItem(Parcel in) {
         this.id = in.readInt();
         this.title = in.readString();
-        this.releaseDate = in.readString();
-        this.voteAverage = in.readString();
         this.overview = in.readString();
         this.posterPath = in.readString();
     }

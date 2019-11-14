@@ -27,7 +27,7 @@ public class FavoriteMovieActivity extends AppCompatActivity implements LoadFavo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite_movie);
 
-        getSupportActionBar().setTitle("Consumer Favorite Movie App");
+        getSupportActionBar().setTitle("Consumer Movie Catalogue");
         RecyclerView rvFavoriteMovie = findViewById(R.id.rv_favorite_movie);
         consumerAdapter = new ConsumerAdapter(this);
         rvFavoriteMovie.setLayoutManager(new LinearLayoutManager(this));

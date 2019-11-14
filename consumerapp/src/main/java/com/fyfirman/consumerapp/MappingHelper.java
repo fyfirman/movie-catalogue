@@ -3,9 +3,7 @@ package com.fyfirman.consumerapp;
 import static android.provider.BaseColumns._ID;
 import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.OVERVIEW;
 import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.POSTER_PATH;
-import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.RELEASE_DATE;
 import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.TITLE;
-import static com.fyfirman.consumerapp.DatabaseContract.FavoriteMovieColumns.VOTE_AVERAGE;
 
 import android.database.Cursor;
 import java.util.ArrayList;
@@ -17,11 +15,9 @@ public class MappingHelper {
         while (notesCursor.moveToNext()) {
             int id = notesCursor.getInt(notesCursor.getColumnIndexOrThrow(_ID));
             String title = notesCursor.getString(notesCursor.getColumnIndexOrThrow(TITLE));
-            String releaseDate = notesCursor.getString(notesCursor.getColumnIndexOrThrow(RELEASE_DATE));
-            String voteAverage = notesCursor.getString(notesCursor.getColumnIndexOrThrow(VOTE_AVERAGE));
             String overview = notesCursor.getString(notesCursor.getColumnIndexOrThrow(OVERVIEW));
             String posterPath = notesCursor.getString(notesCursor.getColumnIndexOrThrow(POSTER_PATH));
-            favoriteMovieList.add(new FavoriteMovieItem(id, title, releaseDate, voteAverage, overview, posterPath));
+            favoriteMovieList.add(new FavoriteMovieItem(id, title, overview, posterPath));
         }
         return favoriteMovieList;
     }
